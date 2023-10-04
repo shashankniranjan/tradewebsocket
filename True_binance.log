@@ -1,0 +1,5 @@
+2023-10-04 20:06:23,914 - master - ERROR - The program encountered an error
+2023-10-04 20:06:23,950 - websocket - INFO - tearing down on exception 
+2023-10-04 20:06:23,950 - master - CRITICAL - the connection was lost
+2023-10-04 20:06:24,060 - werkzeug - WARNING -  * Debugger is active!
+2023-10-04 20:06:24,060 - werkzeug - INFO -  * Debugger PIN: 366-986-386
