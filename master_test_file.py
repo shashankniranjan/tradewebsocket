@@ -10,7 +10,7 @@ from logging.handlers import TimedRotatingFileHandler
 #THis is the basic configuration of the logging models
 
 
-logging.basicConfig(filename=f"app_test.log",level=10,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',filemode='w')
+logging.basicConfig(filename="app_test.log",level=10,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',filemode='w')
 
 #create flask application
 
