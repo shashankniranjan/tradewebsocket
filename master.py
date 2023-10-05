@@ -12,7 +12,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 logging.basicConfig(level=logging.DEBUG,
                     format=" %(asctime)s - %(levelname)s - %(message)s",
-                    #datefmt='%Y-%m-%d_%H-%M-%S',
+                    datefmt='%Y-%m-%d_%H-%M-%S',
                     filename='C:/BOX_1/binancewebsocketcreation/True_Main_log/True_App_Main.log')
 
 #create flask application
@@ -47,10 +47,17 @@ logger.setLevel(logging.DEBUG)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
+#add file handler to access  the logs of the error of the stream
 error_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/True_error_log/True_error_log.log',when="midnight",interval=1, backupCount=7)
 error_handler.setLevel(logging.ERROR)
 error_handler.setFormatter(logFormatter)
 logger.addHandler(error_handler)
+
+#add file handler to access the logs of the crirtical errors
+critical_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/True_critical_error_log/True_critical_error_log.log',when="midnight",interval=1, backupCount=7)
+critical_handler.setLevel(logging.CRITICAL)
+critical_handler.setFormatter(logFormatter)
+logger.addHandler(critical_handler)
 
 # attempt 2 of the logging system
 #logger1 = logging.getLogger('app_test.area1')
@@ -86,15 +93,18 @@ def on_open(ws):
     except Exception as e:
         print(e)
 
+#this is the part which takes the messsage from the application
 def on_message(ws, message):
     data=json.loads(message)
     logger.info("program is working as expected.")
     print(message)
 
+#this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
     logger.error("The program encountered an error")
     logger.warning("Warning, the program may not function properly")
 
+#this takes the part of the critical error from the data stream
 def on_close(ws, close_status_code, close_msg):
     logger.critical("the connection was lost")
     print("closed the connection")

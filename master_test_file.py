@@ -10,7 +10,10 @@ from logging.handlers import TimedRotatingFileHandler
 #THis is the basic configuration of the logging models
 
 
-logging.basicConfig(filename=f"app_test.log",level=10,format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',filemode='w')
+logging.basicConfig(level=logging.DEBUG,
+                    format=" %(asctime)s - %(levelname)s - %(message)s",
+                    #datefmt='%Y-%m-%d_%H-%M-%S',
+                    filename='C:/BOX_1/binancewebsocketcreation/main_log/app_test.log')
 
 #create flask application
 
