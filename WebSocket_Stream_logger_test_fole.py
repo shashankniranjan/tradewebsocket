@@ -1,6 +1,6 @@
 from flask import Flask,jsonify
 from flask import request,has_request_context
-
+import datetime
 import websocket
 import json
 
@@ -11,9 +11,9 @@ from logging.handlers import TimedRotatingFileHandler
 
 
 logging.basicConfig(level=logging.DEBUG,
-                    format=" %(asctime)s - %(levelname)s - %(message)s",
+                    format="%(asctime)s - %(levelname)s - %(message)s",
                     datefmt='%Y-%m-%d_%H-%M-%S',
-                    filename='C:/BOX_1/binancewebsocketcreation/True_Main_log/True_App_Main.log')
+                    filename='C:/BOX_1/binancewebsocketcreation/Main_log/App_Main.log')
 
 #create flask application
 
@@ -33,7 +33,7 @@ class NewFormatter(logging.Formatter):
         return super().format(record)
 
 #This displays how the log would be seen by the user
-logFormatter=logging.Formatter('%(asctime)s - %(message)s')
+logFormatter=logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
 #add console handler to the root logger
 consoleHandler=logging.StreamHandler()
@@ -42,19 +42,19 @@ consoleHandler.setFormatter(logFormatter)
 logger.addHandler(consoleHandler)
 
 #add file handler to the root logger for the app_test
-fileHandler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/True_Main_log/True_Main_log.log',when="midnight", interval=1 ,backupCount=7)
+fileHandler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/Main_log/Main_log.log',when="midnight", interval=1 ,backupCount=7)
 logger.setLevel(logging.DEBUG)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
 #add file handler to access  the logs of the error of the stream
-error_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/True_error_log/True_error_log.log',when="midnight",interval=1, backupCount=7)
+error_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/error_log/error_log.log',when="midnight",interval=1, backupCount=7)
 error_handler.setLevel(logging.ERROR)
 error_handler.setFormatter(logFormatter)
 logger.addHandler(error_handler)
 
-#add file handler to access the logs of the crirtical errors
-critical_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/True_critical_error_log/True_critical_error_log.log',when="midnight",interval=1, backupCount=7)
+#add file handler to access the logs of the critical errors
+critical_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log',when="midnight",interval=1, backupCount=7)
 critical_handler.setLevel(logging.CRITICAL)
 critical_handler.setFormatter(logFormatter)
 logger.addHandler(critical_handler)
@@ -93,26 +93,53 @@ def on_open(ws):
     except Exception as e:
         print(e)
 
+# Log the message with the time at which it was received
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
     data=json.loads(message)
     logger.info("program is working as expected.")
+
+    #this adds the data to the logger as well as adds the required data to the stream
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    logger.info(f"{current_time} - {message}")
     print(message)
+
+    file_path ='C:/BOX_1/binancewebsocketcreation/Web_socket_Stream_logs/websocket_stream_log.log' #choose your file path
+    with open(file_path, "a") as output_file:
+            output_file.write(f"{current_time} - {message}\n")
 
 #this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
     logger.error("The program encountered an error")
     logger.warning("Warning, the program may not function properly")
+    
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    logger.error(f"{current_time} - {error}")
 
+    # Optionally, you can also log the error to a separate file:
+
+    error_log_file_path ='C:/BOX_1/binancewebsocketcreation/error_log/error_log.log'
+    with open(error_log_file_path,"a") as output_file:
+        output_file.write(f"{current_time} - {error}\n")
 #this takes the part of the critical error from the data stream
 def on_close(ws, close_status_code, close_msg):
     logger.critical("the connection was lost")
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    logger.critical(f"{current_time} - Critical error: {close_msg}")
+
+    # Optionally, you can also log the error to a separate file:
+
+    critical_error_log_file_path = 'C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log'
+    with open(critical_error_log_file_path,"a") as output_file:
+        output_file.write(f"{current_time} - Critical error: {close_msg}\n")
+
     print("closed the connection")
 
 
 ### url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
 
-ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",on_open=on_open,
+ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
+                            on_open=on_open,
                             on_message=on_message,
                             on_error=on_error,
                             on_close=on_close)
