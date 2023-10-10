@@ -59,10 +59,6 @@ critical_handler.setLevel(logging.CRITICAL)
 critical_handler.setFormatter(logFormatter)
 logger.addHandler(critical_handler)
 
-# attempt 2 of the logging system
-#logger1 = logging.getLogger('app_test.area1')
-#logger2 = logging.getLogger('app_test.area2')
-
 #types of the logs the system is generating.
 
 #logging.info
@@ -144,20 +140,6 @@ ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_error=on_error,
                             on_close=on_close)
 ws.run_forever()
-#import requests
-#def get_last_price():
-#    response = requests.get('http://localhost:5000/ltp')
-#   data = response.json()
-#    if 'last price' in data:
-##
-#    else:
-#        return None
-##    if __name__ == "__main__":
-#        while True:
-#            Ltp = get_last_price()
-#            if ltp is not None:
-#                print("Last Traded Price. (ltp)")
-#3\               print("No data available")
-#           input("press enter to fetch again")
-#run the flask application
+
 app.run(host="0.0.0.0",port=50100,debug=True)
+

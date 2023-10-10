@@ -42,19 +42,19 @@ consoleHandler.setFormatter(logFormatter)
 logger.addHandler(consoleHandler)
 
 #add file handler to the root logger for the app_test
-fileHandler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/Main_log/Main_log.log',when="midnight", interval=1 ,backupCount=7)
+fileHandler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/Main_log/Main_log.log',when="midnight", interval=1 ,backupCount=12)
 logger.setLevel(logging.DEBUG)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
 #add file handler to access  the logs of the error of the stream
-error_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/error_log/error_log.log',when="midnight",interval=1, backupCount=7)
+error_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/error_log/error_log.log',when="midnight",interval=1, backupCount=12)
 error_handler.setLevel(logging.ERROR)
 error_handler.setFormatter(logFormatter)
 logger.addHandler(error_handler)
 
 #add file handler to access the logs of the critical errors
-critical_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log',when="midnight",interval=1, backupCount=7)
+critical_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log',when="midnight",interval=1, backupCount=12)
 critical_handler.setLevel(logging.CRITICAL)
 critical_handler.setFormatter(logFormatter)
 logger.addHandler(critical_handler)
@@ -97,12 +97,15 @@ def on_open(ws):
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
     data=json.loads(message)
+    price = data['p']
+    symbol = data['s']
     logger.info("program is working as expected.")
 
     #this adds the data to the logger as well as adds the required data to the stream
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    logger.info(f"{current_time} - {message}")
-    print(message)
+    #logger.info(f"{current_time} - {message} - Price: {price} - Symbol: {symbol}")
+    logger.info(f"{current_time}--Price: {price} - Symbol: {symbol}")
+    print(symbol,price)
 
     file_path ='C:/BOX_1/binancewebsocketcreation/Web_socket_Stream_logs/websocket_stream_log.log' #choose your file path
     with open(file_path, "a") as output_file:
@@ -144,20 +147,6 @@ ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_error=on_error,
                             on_close=on_close)
 ws.run_forever()
-#import requests
-#def get_last_price():
-#    response = requests.get('http://localhost:5000/ltp')
-#   data = response.json()
-#    if 'last price' in data:
-##
-#    else:
-#        return None
-##    if __name__ == "__main__":
-#        while True:
-#            Ltp = get_last_price()
-#            if ltp is not None:
-#                print("Last Traded Price. (ltp)")
-#3\               print("No data available")
-#           input("press enter to fetch again")
+
 #run the flask application
 app.run(host="0.0.0.0",port=50100,debug=True)
