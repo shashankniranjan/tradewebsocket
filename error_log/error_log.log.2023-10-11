@@ -1,0 +1,66 @@
+2023-10-11 10:27:03,379 - 379 - ERROR - The program encountered an error
+2023-10-11 10:27:03,381 - 381 - ERROR - 2023-10-11_10-27-03 - 
+2023-10-11_10-27-03 - 
+2023-10-11 10:27:03,382 - 382 - CRITICAL - the connection was lost
+2023-10-11 10:27:03,384 - 384 - CRITICAL - 2023-10-11_10-27-03 - Critical error: None
+2023-10-11 10:35:26,698 - 698 - ERROR - The program encountered an error
+2023-10-11 10:35:26,700 - 700 - ERROR - 2023-10-11_10-35-26 - [Errno 11001] getaddrinfo failed
+2023-10-11_10-35-26 - [Errno 11001] getaddrinfo failed
+2023-10-11 10:35:26,702 - 702 - CRITICAL - the connection was lost
+2023-10-11 10:35:26,703 - 703 - CRITICAL - 2023-10-11_10-35-26 - Critical error: None
+2023-10-11 10:35:27,315 - 315 - ERROR - The program encountered an error
+2023-10-11 10:35:27,315 - 315 - ERROR - 2023-10-11_10-35-27 - [Errno 11001] getaddrinfo failed
+2023-10-11_10-35-27 - [Errno 11001] getaddrinfo failed
+2023-10-11 10:35:27,315 - 315 - CRITICAL - the connection was lost
+2023-10-11 10:35:27,315 - 315 - CRITICAL - 2023-10-11_10-35-27 - Critical error: None
+2023-10-11 10:43:27,628 - 628 - ERROR - The program encountered an error
+2023-10-11 10:43:27,628 - 628 - ERROR - 2023-10-11_10-43-27 - 
+2023-10-11_10-43-27 - 
+2023-10-11 10:43:27,880 - 880 - CRITICAL - the connection was lost
+2023-10-11 10:43:27,880 - 880 - CRITICAL - 2023-10-11_10-43-27 - Critical error: None
+2023-10-11_11-09-41 - 'p'
+2023-10-11_11-10-42 - 
+2023-10-11_11-13-03 - 'p'
+2023-10-11_11-15-28 - 
+2023-10-11_11-15-31 - 
+2023-10-11_11-43-30 - 'p'
+2023-10-11_11-44-13 - 
+2023-10-11_11-55-19 - 'p'
+2023-10-11_11-56-09 - 
+2023-10-11_14-31-58 - 'p'
+2023-10-11_14-32-54 - 
+2023-10-11_14-33-24 - 'p'
+2023-10-11_14-36-50 - 
+2023-10-11_16-10-45 - 
+2023-10-11_16-11-02 - 
+2023-10-11 16:13:54,287 - 287 - ERROR - The program encountered an error
+2023-10-11 16:13:54,289 - 289 - ERROR - 2023-10-11_16-13-54 - Connection to remote host was lost.
+2023-10-11_16-13-54 - Connection to remote host was lost.
+2023-10-11 16:13:54,290 - 290 - CRITICAL - the connection was lost
+2023-10-11 16:13:54,290 - 290 - CRITICAL - 2023-10-11_16-13-54 - Critical error: None
+2023-10-11 16:13:56,671 - 671 - ERROR - The program encountered an error
+2023-10-11 16:13:56,675 - 675 - ERROR - 2023-10-11_16-13-56 - [Errno 11001] getaddrinfo failed
+2023-10-11_16-13-56 - [Errno 11001] getaddrinfo failed
+2023-10-11 16:13:56,677 - 677 - CRITICAL - the connection was lost
+2023-10-11 16:13:56,678 - 678 - CRITICAL - 2023-10-11_16-13-56 - Critical error: None
+2023-10-11 16:16:33,055 - 55 - ERROR - The program encountered an error
+2023-10-11 16:16:33,055 - 55 - ERROR - 2023-10-11_16-16-33 - [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-10-11_16-16-33 - [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-10-11 16:16:33,055 - 55 - CRITICAL - the connection was lost
+2023-10-11 16:16:33,055 - 55 - CRITICAL - 2023-10-11_16-16-33 - Critical error: None
+2023-10-11 16:18:04,383 - 383 - ERROR - The program encountered an error
+2023-10-11 16:18:04,383 - 383 - ERROR - 2023-10-11_16-18-04 - 
+2023-10-11_16-18-04 - 
+2023-10-11 16:18:04,392 - 392 - CRITICAL - the connection was lost
+2023-10-11 16:18:04,396 - 396 - CRITICAL - 2023-10-11_16-18-04 - Critical error: None
+2023-10-11_16-18-28 - 'p'
+2023-10-11 16:40:04,194 - 194 - ERROR - The program encountered an error
+2023-10-11 16:40:04,194 - 194 - ERROR - 2023-10-11_16-40-04 - 
+2023-10-11_16-40-04 - 
+2023-10-11 16:40:04,428 - 428 - CRITICAL - the connection was lost
+2023-10-11 16:40:04,428 - 428 - CRITICAL - 2023-10-11_16-40-04 - Critical error: None
+2023-10-11 16:43:26,223 - 223 - ERROR - The program encountered an error
+2023-10-11 16:43:26,223 - 223 - ERROR - 2023-10-11_16-43-26 - 
+2023-10-11_16-43-26 - 
+2023-10-11 16:43:26,510 - 510 - CRITICAL - the connection was lost
+2023-10-11 16:43:26,511 - 511 - CRITICAL - 2023-10-11_16-43-26 - Critical error: None

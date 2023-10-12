@@ -1,13 +1,15 @@
-2023-10-10 15:42:57,183 - ERROR - The program encountered an error
-2023-10-10 15:42:57,186 - ERROR - 2023-10-10_15-42-57 - 'p'
-2023-10-10_15-42-57 - 'p'
-2023-10-10 15:44:39,567 - ERROR - The program encountered an error
-2023-10-10 15:44:39,567 - ERROR - 2023-10-10_15-44-39 - 
-2023-10-10_15-44-39 - 
-2023-10-10 15:44:39,830 - CRITICAL - the connection was lost
-2023-10-10 15:44:39,836 - CRITICAL - 2023-10-10_15-44-39 - Critical error: None
-2023-10-10 15:45:56,441 - ERROR - The program encountered an error
-2023-10-10 15:45:56,441 - ERROR - 2023-10-10_15-45-56 - 
-2023-10-10_15-45-56 - 
-2023-10-10 15:45:56,735 - CRITICAL - the connection was lost
-2023-10-10 15:45:56,735 - CRITICAL - 2023-10-10_15-45-56 - Critical error: None
+2023-10-12 10:35:50,768 - 768 - ERROR - The program encountered an error
+2023-10-12 10:35:50,768 - 768 - ERROR - 2023-10-12_10-35-50 - 
+2023-10-12_10-35-50 - 
+2023-10-12 10:35:51,064 - 64 - CRITICAL - the connection was lost
+2023-10-12 10:35:51,079 - 79 - CRITICAL - 2023-10-12_10-35-51 - Critical error: None
+2023-10-12 10:45:59,198 - 198 - ERROR - The program encountered an error
+2023-10-12 10:45:59,213 - 213 - ERROR - 2023-10-12_10-45-59 - 
+2023-10-12_10-45-59 - 
+2023-10-12 10:45:59,489 - 489 - CRITICAL - the connection was lost
+2023-10-12 10:45:59,489 - 489 - CRITICAL - 2023-10-12_10-45-59 - Critical error: None
+2023-10-12_11-12-17 - Connection to remote host was lost.
+2023-10-12_11-14-15 - 
+2023-10-12_11-25-42 - Connection to remote host was lost.
+2023-10-12_11-26-32 - 
+2023-10-12_11-28-40 - 

@@ -4,6 +4,7 @@ import datetime
 import websocket
 import json
 
+
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
@@ -11,7 +12,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 
 logging.basicConfig(level=logging.DEBUG,
-                    format="%(asctime)s - %(levelname)s - %(message)s",
+                    format="%(asctime)s - %(msecs)d - %(levelname)s - %(message)s",
                     datefmt='%Y-%m-%d_%H-%M-%S',
                     filename='C:/BOX_1/binancewebsocketcreation/Main_log/App_Main.log')
 
@@ -33,7 +34,7 @@ class NewFormatter(logging.Formatter):
         return super().format(record)
 
 #This displays how the log would be seen by the user
-logFormatter=logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+logFormatter=logging.Formatter('%(asctime)s - %(msecs)d - %(levelname)s - %(message)s')
 
 #add console handler to the root logger
 consoleHandler=logging.StreamHandler()
@@ -59,10 +60,11 @@ critical_handler.setLevel(logging.CRITICAL)
 critical_handler.setFormatter(logFormatter)
 logger.addHandler(critical_handler)
 
-# attempt 2 of the logging system
-#logger1 = logging.getLogger('app_test.area1')
-#logger2 = logging.getLogger('app_test.area2')
-
+#add file handler to the root logger for the websocket_Stream
+Stream_Handler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/Web_socket_Stream_logs/websocket_stream_log.log',when="midnight", interval=1 ,backupCount=12)
+logger.setLevel(logging.DEBUG)
+Stream_Handler.setFormatter(logFormatter)
+logger.addHandler(Stream_Handler)
 #types of the logs the system is generating.
 
 #logging.info
@@ -86,7 +88,7 @@ def hello():
 
 def on_open(ws):
     print("Opened connection to the stream ")
-    logger.debug("this is the stream arriving into the log")
+    app.logger.debug("this is the stream arriving into the log")
     try:
         subscribe={ "method": "SUBSCRIBE", "params": ["btcusdt@aggTrade"] , "id": 1}
         ws.send(json.dumps(subscribe))
@@ -97,15 +99,12 @@ def on_open(ws):
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
     data=json.loads(message)
-    price = data['p']
-    symbol = data['s']
-    logger.info("program is working as expected.")
+    app.logger.info("program is working as expected.")
 
     #this adds the data to the logger as well as adds the required data to the stream
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    #logger.info(f"{current_time} - {message} - Price: {price} - Symbol: {symbol}")
-    logger.info(f"{current_time}--Price: {price} - Symbol: {symbol}")
-    print(symbol,price)
+    app.logger.info(f"{current_time} - {message}")
+    print(message)
 
     file_path ='C:/BOX_1/binancewebsocketcreation/Web_socket_Stream_logs/websocket_stream_log.log' #choose your file path
     with open(file_path, "a") as output_file:
@@ -113,11 +112,11 @@ def on_message(ws, message):
 
 #this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
-    logger.error("The program encountered an error")
-    logger.warning("Warning, the program may not function properly")
+    app.logger.error("The program encountered an error")
+    app.logger.warning("Warning, the program may not function properly")
     
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    logger.error(f"{current_time} - {error}")
+    app.logger.error(f"{current_time} - {error}")
 
     # Optionally, you can also log the error to a separate file:
 
@@ -126,9 +125,9 @@ def on_error(ws, error):
         output_file.write(f"{current_time} - {error}\n")
 #this takes the part of the critical error from the data stream
 def on_close(ws, close_status_code, close_msg):
-    logger.critical("the connection was lost")
+    app.logger.critical("the connection was lost")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    logger.critical(f"{current_time} - Critical error: {close_msg}")
+    app.logger.critical(f"{current_time} - Critical error: {close_msg}")
 
     # Optionally, you can also log the error to a separate file:
 
@@ -148,5 +147,5 @@ ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_close=on_close)
 ws.run_forever()
 
-#run the flask application
-app.run(host="0.0.0.0",port=50100,debug=True)
+app.run(host="0.0.0.0",port=5000,debug=True)
+
