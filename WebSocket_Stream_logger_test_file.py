@@ -3,6 +3,8 @@ from flask import request,has_request_context
 import datetime
 import websocket
 import json
+import time
+
 
 
 import logging
@@ -104,7 +106,7 @@ def on_message(ws, message):
     #this adds the data to the logger as well as adds the required data to the stream
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     app.logger.info(f"{current_time} - {message}")
-    print(message)
+    print(current_time," ",message)
 
     file_path ='C:/BOX_1/binancewebsocketcreation/Web_socket_Stream_logs/websocket_stream_log.log' #choose your file path
     with open(file_path, "a") as output_file:
@@ -137,8 +139,54 @@ def on_close(ws, close_status_code, close_msg):
 
     print("closed the connection")
 
+class WebSocketClient:
 
-### url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
+    def __init__(self, url):
+        """Initializes the WebSocketClient class.
+
+        Args:
+            url: The URL of the WebSocket server.
+        """
+        self.url = url
+        self.ws = None
+        self.last_message_time = time.time()
+
+    def connect(self):
+        """Connects to the WebSocket server."""
+        self.ws = websocket.WebSocketApp(self.url)
+        self.ws.run_forever()
+
+    def reconnect(self):
+        """Reconnects to the WebSocket server."""
+        self.ws = websocket.WebSocketApp(self.url)
+        self.ws.run_forever()
+
+    def is_connected(self):
+        """Returns True if the WebSocket client is connected to the server, False otherwise."""
+        return self.ws is not None and self.ws.state == websocket.WebSocket.OPEN
+
+    def send(self, message):
+        """Sends a message to the WebSocket server.
+
+        Args:
+            message: The message to send.
+        """
+        self.ws.send(message)
+
+    def receive(self):
+        """Receives a message from the WebSocket server.
+
+        Returns:
+            The received message, or None if no message is available.
+        """
+        self.last_message_time = time.time()
+        return self.ws.recv()
+
+    def try_reconnect(self):
+        """Tries to reconnect to the WebSocket server if no message has been received in the last 10 seconds."""
+        if time.time() - self.last_message_time > 10:
+            self.reconnect()
+url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
 
 ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_open=on_open,
@@ -149,3 +197,20 @@ ws.run_forever()
 
 app.run(host="0.0.0.0",port=5000,debug=True)
 
+
+if __name__ == "__main__":
+    url = "wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
+
+    client = WebSocketClient(url)
+
+    while True:
+        if not client.is_connected():
+            client.connect()
+
+        message = client.receive()
+
+        # Process the message
+
+        client.try_reconnect()
+
+        time.sleep(1)
