@@ -3,7 +3,7 @@ import os
 import requests
 app = Flask(__name__)
 
-@app.route("/1tp")
+@app.route("/ltp")
 def get_last_price():
     response = requests.get('http://localhost:5000/')
     data = response.json()

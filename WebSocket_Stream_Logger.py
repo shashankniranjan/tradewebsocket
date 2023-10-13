@@ -4,9 +4,6 @@ import datetime
 import websocket
 import json
 import time
-
-
-
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
@@ -94,6 +91,7 @@ def on_open(ws):
     try:
         subscribe={ "method": "SUBSCRIBE", "params": ["btcusdt@aggTrade"] , "id": 1}
         ws.send(json.dumps(subscribe))
+        
     except Exception as e:
         print(e)
 
@@ -139,53 +137,7 @@ def on_close(ws, close_status_code, close_msg):
 
     print("closed the connection")
 
-class WebSocketClient:
 
-    def __init__(self, url):
-        """Initializes the WebSocketClient class.
-
-        Args:
-            url: The URL of the WebSocket server.
-        """
-        self.url = url
-        self.ws = None
-        self.last_message_time = time.time()
-
-    def connect(self):
-        """Connects to the WebSocket server."""
-        self.ws = websocket.WebSocketApp(self.url)
-        self.ws.run_forever()
-
-    def reconnect(self):
-        """Reconnects to the WebSocket server."""
-        self.ws = websocket.WebSocketApp(self.url)
-        self.ws.run_forever()
-
-    def is_connected(self):
-        """Returns True if the WebSocket client is connected to the server, False otherwise."""
-        return self.ws is not None and self.ws.state == websocket.WebSocket.OPEN
-
-    def send(self, message):
-        """Sends a message to the WebSocket server.
-
-        Args:
-            message: The message to send.
-        """
-        self.ws.send(message)
-
-    def receive(self):
-        """Receives a message from the WebSocket server.
-
-        Returns:
-            The received message, or None if no message is available.
-        """
-        self.last_message_time = time.time()
-        return self.ws.recv()
-
-    def try_reconnect(self):
-        """Tries to reconnect to the WebSocket server if no message has been received in the last 10 seconds."""
-        if time.time() - self.last_message_time > 10:
-            self.reconnect()
 url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
 
 ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
@@ -196,21 +148,3 @@ ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
 ws.run_forever()
 
 app.run(host="0.0.0.0",port=5000,debug=True)
-
-
-if __name__ == "__main__":
-    url = "wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
-
-    client = WebSocketClient(url)
-
-    while True:
-        if not client.is_connected():
-            client.connect()
-
-        message = client.receive()
-
-        # Process the message
-
-        client.try_reconnect()
-
-        time.sleep(1)
