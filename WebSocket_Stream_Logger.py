@@ -99,8 +99,8 @@ def on_open(ws):
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
     time.sleep(2)
-    global get_last_price
-    get_last_price=json.loads(message)
+    global LAST_TRADED_PRICE
+    LAST_TRADED_PRICE=json.loads(message)
     app.logger.info("program is working as expected.")
 
     #this adds the data to the logger as well as adds the required data to the stream
