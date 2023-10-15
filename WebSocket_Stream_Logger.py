@@ -6,7 +6,7 @@ import json
 import time
 import logging
 from logging.handlers import TimedRotatingFileHandler
-
+import os
 #THis is the basic configuration of the logging models
 
 
@@ -78,10 +78,10 @@ logger.addHandler(Stream_Handler)
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
+@app.route('/')
+def last_price():
     app.logger.info("from route handler..")
-    return "application start"
+    return "the last price is"
 
 #This is where the base websocket server is embedded into the application.
 
@@ -98,7 +98,9 @@ def on_open(ws):
 # Log the message with the time at which it was received
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
-    data=json.loads(message)
+    time.sleep(2)
+    global get_last_price
+    get_last_price=json.loads(message)
     app.logger.info("program is working as expected.")
 
     #this adds the data to the logger as well as adds the required data to the stream
@@ -134,7 +136,16 @@ def on_close(ws, close_status_code, close_msg):
     critical_error_log_file_path = 'C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log'
     with open(critical_error_log_file_path,"a") as output_file:
         output_file.write(f"{current_time} - Critical error: {close_msg}\n")
+        """Called when the WebSocket connection is closed.
 
+    Args:
+        ws: The WebSocket that was closed.
+        close_status_code: The close status code.
+        close_msg: The close message.
+
+    Returns:
+        None
+    """
     print("closed the connection")
 
 
@@ -146,5 +157,4 @@ ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_error=on_error,
                             on_close=on_close)
 ws.run_forever()
-
 app.run(host="0.0.0.0",port=5000,debug=True)

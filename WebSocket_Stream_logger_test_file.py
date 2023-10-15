@@ -4,7 +4,7 @@ import datetime
 import websocket
 import json
 import time
-
+import os
 
 
 import logging
@@ -100,7 +100,9 @@ def on_open(ws):
 # Log the message with the time at which it was received
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
-    data=json.loads(message)
+    global get_last_price
+    time.sleep(2)
+    get_last_price = json.loads(message)
     app.logger.info("program is working as expected.")
 
     #this adds the data to the logger as well as adds the required data to the stream
@@ -125,7 +127,10 @@ def on_error(ws, error):
     error_log_file_path ='C:/BOX_1/binancewebsocketcreation/error_log/error_log.log'
     with open(error_log_file_path,"a") as output_file:
         output_file.write(f"{current_time} - {error}\n")
+
+
 #this takes the part of the critical error from the data stream
+
 def on_close(ws, close_status_code, close_msg):
     app.logger.critical("the connection was lost")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
@@ -140,7 +145,7 @@ def on_close(ws, close_status_code, close_msg):
     print("closed the connection")
 import time
 
-def reconnect_to_websocket(ws, max_retries=3, retry_interval=5):
+def reconnect_to_websocket(ws, max_retries=100000000000000000000000, retry_interval=1):
   """Attempts to reconnect to the WebSocket server.
 
   Args:
@@ -161,6 +166,7 @@ def reconnect_to_websocket(ws, max_retries=3, retry_interval=5):
       time.sleep(retry_interval)
   return False
 
+
 def handle_websocket_error(ws, error):
   """Handles an error from the WebSocket server.
 
@@ -171,8 +177,9 @@ def handle_websocket_error(ws, error):
 
   logging.error("WebSocket error: %s", error)
 
-  # TODO: Implement custom error handling logic here, such as reconnecting to
-  # the server or logging the error to a database.
+  # Reconnect to the WebSocket server.
+  ws.reconnect()
+
 
 def log_data_to_file(file_path, data, append=True):
   """Logs data to a file.
@@ -184,10 +191,14 @@ def log_data_to_file(file_path, data, append=True):
   """
 
   try:
-    with open(file_path, "a" if append else "w") as output_file:
+    with open(file_path, "a") as output_file:
       output_file.write(data)
+      output_file.flush()
   except Exception as e:
     logging.error("Failed to log data to file: %s", e)
+  finally:
+    if output_file:
+      output_file.close()
 
 def monitor_program_for_errors(ws, error_threshold=10, error_interval=60):
   """Monitors the program for errors and performance issues.
@@ -205,20 +216,26 @@ def monitor_program_for_errors(ws, error_threshold=10, error_interval=60):
   last_error_time = time.time()
 
   while True:
-    # TODO: Implement custom monitoring logic here, such as tracking the number of
-    # errors that have occurred or monitoring the CPU usage of the program.
+    try:
+      # TODO: Implement custom monitoring logic here, such as tracking the number of
+      # errors that have occurred or monitoring the CPU usage of the program.
 
-    if time.time() - last_error_time > error_interval:
-      error_count = 0
-      last_error_time = time.time()
+      if time.time() - last_error_time > error_interval:
+        error_count = 0
+        last_error_time = time.time()
 
-    if error_count >= error_threshold:
-      return True
+      if error_count >= error_threshold:
+        return True
 
-    # TODO: Implement custom logic to handle errors, such as logging them or
-    # reconnecting to the WebSocket server.
+      # TODO: Implement custom logic to handle errors, such as logging them or
+      # reconnecting to the WebSocket server.
 
-    time.sleep(1)
+      time.sleep(1)
+    except Exception as e:
+      logging.error("Failed to monitor program for errors: %s", e)
+      return False
+
+import hashlib
 
 def back_up_program_configuration_and_data(backup_directory, frequency=3600):
   """Backs up the program's configuration and data.
@@ -229,8 +246,24 @@ def back_up_program_configuration_and_data(backup_directory, frequency=3600):
   """
 
   while True:
-    # TODO: Implement custom backup logic here, such as backing up the program's
-    # configuration file to a cloud storage service.
+    try:
+      # TODO: Implement custom backup logic here, such as backing up the program's
+      # configuration file to a cloud storage service.
+
+      # Verify the integrity of the backups.
+      for backup_file in os.listdir(backup_directory):
+        backup_file_path = os.path.join(backup_directory, backup_file)
+        with open(backup_file_path, "rb") as f:
+          backup_data = f.read()
+
+        backup_hash = hashlib.sha256(backup_data).hexdigest()
+        if backup_hash != backup_file.split(".")[0]:
+          logging.error("Backup file %s is corrupted", backup_file_path)
+          os.remove(backup_file_path)
+
+    except Exception as e:
+      logging.error("Failed to back up program configuration and data: %s", e)
+      return
 
     time.sleep(frequency)
 
