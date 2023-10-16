@@ -4,9 +4,12 @@ import datetime
 import websocket
 import json
 import time
+import os
+import asyncio
+import hashlib
 import logging
 from logging.handlers import TimedRotatingFileHandler
-import os
+
 #THis is the basic configuration of the logging models
 
 
@@ -78,6 +81,7 @@ logger.addHandler(Stream_Handler)
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def last_price():
     app.logger.info("from route handler..")
@@ -125,7 +129,10 @@ def on_error(ws, error):
     error_log_file_path ='C:/BOX_1/binancewebsocketcreation/error_log/error_log.log'
     with open(error_log_file_path,"a") as output_file:
         output_file.write(f"{current_time} - {error}\n")
+
+
 #this takes the part of the critical error from the data stream
+
 def on_close(ws, close_status_code, close_msg):
     app.logger.critical("the connection was lost")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
@@ -136,17 +143,138 @@ def on_close(ws, close_status_code, close_msg):
     critical_error_log_file_path = 'C:/BOX_1/binancewebsocketcreation/critical_error_log/critical_error_log.log'
     with open(critical_error_log_file_path,"a") as output_file:
         output_file.write(f"{current_time} - Critical error: {close_msg}\n")
-        """Called when the WebSocket connection is closed.
 
-    Args:
-        ws: The WebSocket that was closed.
-        close_status_code: The close status code.
-        close_msg: The close message.
-
-    Returns:
-        None
-    """
     print("closed the connection")
+import time
+
+def reconnect_to_websocket(ws, retry_interval=1):
+  """Attempts to reconnect to the WebSocket server.
+
+  Args:
+    ws: The WebSocket object.
+    retry_interval: The interval between retries in seconds.
+
+  Returns:
+    None.
+  """
+
+  while True:
+    try:
+      ws.run_forever()
+      return
+    except Exception as e:
+      logging.error("Failed to reconnect to WebSocket server: %s", e)
+      time.sleep(retry_interval)
+
+if __name__ == "__main__":
+  ws = websocket.WebSocketApp("ws://localhost:5000")
+  reconnect_to_websocket(ws)
+"""This function will now attempt to reconnect to the WebSocket server forever, with the specified interval between retries.
+If the connection is successful,the function will return. Otherwise, the function will log an error message and sleep for
+the specified interval before trying again.Note that it is important to set the retry_interval to a reasonable value. If 
+the interval is too short, the function will place a lot of load on the server. If the interval is too long,
+the application may not be able to respond to events in a timely manner."""
+
+def handle_websocket_error(ws, error):
+   """Handles an error from the WebSocket server.
+  
+   Args: 
+     ws: The WebSocket object. 
+     error: The error message. 
+   """ 
+  
+   logging.error("WebSocket error: %s", error)
+  
+   # Call the `ws.reconnect()` method.
+   ws.reconnect()
+
+   # Create a timer to schedule the next reconnect attempt in the future.
+   timer = asyncio.create_task(asyncio.sleep(1))
+   timer.add_done_callback(lambda timer: handle_websocket_error(ws, error))
+
+
+
+def log_data_to_file(file_path, data, append=True):
+  """Logs data to a file.
+
+  Args:
+    file_path: The path to the file.
+    data: The data to log.
+    append: Whether to append the data to the file or overwrite it.
+  """
+  file_path="C:/BOX_1/binancewebsocketcreation/log_data_to_file/log_data_to_file.log"
+  try:
+    with open(file_path, "a") as output_file:
+      output_file.write(data)
+      output_file.flush()
+  except Exception as e:
+    logging.error("Failed to log data to file: %s", e)
+  finally:
+    if output_file:
+      output_file.close()
+
+"""def monitor_program_for_errors(ws, error_threshold=10, error_interval=60):
+
+
+  error_count = 0
+  last_error_time = time.time()
+
+  while True:
+    try:
+      # TODO: Implement custom monitoring logic here, such as tracking the number of
+      # errors that have occurred or monitoring the CPU usage of the program.
+
+      if time.time() - last_error_time > error_interval:
+        error_count = 0
+        last_error_time = time.time()
+
+      if error_count >= error_threshold:
+        return True
+
+      # TODO: Implement custom logic to handle errors, such as logging them or
+      # reconnecting to the WebSocket server.
+
+      time.sleep(1)
+    except Exception as e:
+      logging.error("Failed to monitor program for errors: %s", e)
+      return False"""
+
+
+
+def back_up_program_configuration_and_data(backup_directory, frequency=3600):
+  """Backs up the program's configuration and data.
+
+  Args:
+    backup_directory: The directory to store the backups in.
+    frequency: The frequency in seconds at which to perform backups.
+  """
+
+  while True:
+    try:
+      backup_directory="C:/BOX_1/binancewebsocketcreation/backup_directory"
+      # Get the program's configuration file path.
+      configuration_file_path = os.path.join(backup_directory, "config.json")
+
+      # Back up the configuration file to the backup directory.
+      with open(configuration_file_path, "rb") as f:
+        with open(os.path.join(backup_directory, "config.json.bak"), "wb") as f_out:
+          f_out.write(f.read())
+
+      # Verify the integrity of the backup.
+      with open(os.path.join(backup_directory, "config.json.bak"), "rb") as f:
+        backup_data = f.read()
+
+      backup_hash = hashlib.sha256(backup_data).hexdigest()
+      if backup_hash != configuration_file_path.split(".")[0]:
+        logging.error("Backup file %s is corrupted", configuration_file_path)
+        os.remove(os.path.join(backup_directory, "config.json.bak"))
+
+    except Exception as e:
+      logging.error("Failed to back up program configuration and data: %s", e)
+      return
+
+    time.sleep(frequency)
+
 
 
 url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
@@ -154,7 +282,19 @@ url="wss://stream.binance.com:9443/ws/btcusdt@aggTrade"
 ws = websocket.WebSocketApp("wss://stream.binance.com:9443/ws/btcusdt@aggTrade",
                             on_open=on_open,
                             on_message=on_message,
-                            on_error=on_error,
+                            on_error=handle_websocket_error,
                             on_close=on_close)
+# Reconnect to the WebSocket server if the connection is lost.
+ws.reconnect_callback = reconnect_to_websocket
+
+# Log all data received from the WebSocket server to a file.
+ws.log_data_callback = log_data_to_file
+
+# Monitor the program for errors and performance issues.
+#ws.error_monitor_callback = monitor_program_for_errors
+
+# Back up the program's configuration and data every 60 minutes.
+ws.backup_callback = back_up_program_configuration_and_data
 ws.run_forever()
+
 app.run(host="0.0.0.0",port=5000,debug=True)

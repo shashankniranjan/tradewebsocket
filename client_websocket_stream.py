@@ -1,7 +1,7 @@
 from flask import Flask, request
 import requests
 from WebSocket_Stream_Logger import LAST_TRADED_PRICE
-
+#from WebSocket_Stream_logger_test_file import LAST_TRADED_PRICE
 app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
