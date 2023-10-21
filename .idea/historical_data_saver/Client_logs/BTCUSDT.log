@@ -544,3 +544,137 @@
 2023-10-21 11:46:23,405 - 405 - INFO - {'last_price': 29603.82}
 2023-10-21 11:46:25,451 - 451 - INFO - {'last_price': 29603.83}
 2023-10-21 11:46:25,452 - 452 - INFO - {'last_price': 29603.83}
+2023-10-21 14:55:44,592 - 592 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96D6C10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:55:44,601 - 601 - ERROR - No data available
+2023-10-21 14:55:48,688 - 688 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96E4D50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:55:48,689 - 689 - ERROR - No data available
+2023-10-21 14:55:52,769 - 769 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96E6E10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:55:52,770 - 770 - ERROR - No data available
+2023-10-21 14:55:56,840 - 840 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96F0C10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:55:56,843 - 843 - ERROR - No data available
+2023-10-21 14:56:00,927 - 927 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96F2810>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:56:00,928 - 928 - ERROR - No data available
+2023-10-21 14:56:04,970 - 970 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AFE96F15D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 14:56:04,972 - 972 - ERROR - No data available
+2023-10-21 15:11:28,823 - 823 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:28,823 - 823 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:30,887 - 887 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:30,888 - 888 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:32,902 - 902 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:32,902 - 902 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:34,936 - 936 - INFO - {'last_price': 29713.3}
+2023-10-21 15:11:34,936 - 936 - INFO - {'last_price': 29713.3}
+2023-10-21 15:11:36,982 - 982 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:36,982 - 982 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:39,033 - 33 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:39,038 - 38 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:41,084 - 84 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:41,084 - 84 - INFO - {'last_price': 29713.29}
+2023-10-21 15:11:43,131 - 131 - INFO - {'last_price': 29713.3}
+2023-10-21 15:11:43,131 - 131 - INFO - {'last_price': 29713.3}
+2023-10-21 15:11:45,163 - 163 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:45,163 - 163 - INFO - {'last_price': 1604.61}
+2023-10-21 15:11:47,219 - 219 - INFO - {'last_price': 29713.46}
+2023-10-21 15:11:47,219 - 219 - INFO - {'last_price': 29713.46}
+2023-10-21 15:11:49,263 - 263 - INFO - {'last_price': 213.0}
+2023-10-21 15:11:49,263 - 263 - INFO - {'last_price': 213.0}
+2023-10-21 15:11:51,296 - 296 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:51,296 - 296 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:53,360 - 360 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:53,360 - 360 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:55,398 - 398 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:55,398 - 398 - INFO - {'last_price': 29713.87}
+2023-10-21 15:11:57,462 - 462 - INFO - {'last_price': 1604.82}
+2023-10-21 15:11:57,467 - 467 - INFO - {'last_price': 1604.82}
+2023-10-21 15:11:59,504 - 504 - INFO - {'last_price': 1604.82}
+2023-10-21 15:11:59,504 - 504 - INFO - {'last_price': 1604.82}
+2023-10-21 15:12:01,602 - 602 - INFO - {'last_price': 29713.87}
+2023-10-21 15:12:01,602 - 602 - INFO - {'last_price': 29713.87}
+2023-10-21 15:12:03,629 - 629 - INFO - {'last_price': 29713.87}
+2023-10-21 15:12:03,630 - 630 - INFO - {'last_price': 29713.87}
+2023-10-21 15:12:05,677 - 677 - INFO - {'last_price': 29713.88}
+2023-10-21 15:12:05,679 - 679 - INFO - {'last_price': 29713.88}
+2023-10-21 15:12:07,710 - 710 - INFO - {'last_price': 1604.82}
+2023-10-21 15:12:07,711 - 711 - INFO - {'last_price': 1604.82}
+2023-10-21 15:12:09,746 - 746 - INFO - {'last_price': 29713.88}
+2023-10-21 15:12:09,746 - 746 - INFO - {'last_price': 29713.88}
+2023-10-21 15:12:11,798 - 798 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:11,798 - 798 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:13,871 - 871 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:13,871 - 871 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:15,908 - 908 - INFO - {'last_price': 1604.86}
+2023-10-21 15:12:15,908 - 908 - INFO - {'last_price': 1604.86}
+2023-10-21 15:12:17,963 - 963 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:17,963 - 963 - INFO - {'last_price': 29717.79}
+2023-10-21 15:12:22,056 - 56 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A17E14050>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 15:12:22,056 - 56 - ERROR - No data available
+2023-10-21 15:12:26,099 - 99 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A17E173D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 15:12:26,099 - 99 - ERROR - No data available
+2023-10-21 15:12:30,178 - 178 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltp (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A17E1D050>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-21 15:12:30,180 - 180 - ERROR - No data available
+2023-10-21 15:19:18,877 - 877 - INFO - {'last_price': 29766.1}
+2023-10-21 15:19:18,878 - 878 - INFO - {'last_price': 29766.1}
+2023-10-21 15:19:20,897 - 897 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:20,897 - 897 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:22,953 - 953 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:22,953 - 953 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:25,008 - 8 - INFO - {'last_price': 1607.07}
+2023-10-21 15:19:25,009 - 9 - INFO - {'last_price': 1607.07}
+2023-10-21 15:19:27,052 - 52 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:27,052 - 52 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:29,107 - 107 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:29,107 - 107 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:31,149 - 149 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:31,149 - 149 - INFO - {'last_price': 29755.16}
+2023-10-21 15:19:33,190 - 190 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:33,190 - 190 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:35,222 - 222 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:35,222 - 222 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:37,254 - 254 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:37,254 - 254 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:39,311 - 311 - INFO - {'last_price': 29755.03}
+2023-10-21 15:19:39,313 - 313 - INFO - {'last_price': 29755.03}
+2023-10-21 15:19:41,368 - 368 - INFO - {'last_price': 1607.03}
+2023-10-21 15:19:41,368 - 368 - INFO - {'last_price': 1607.03}
+2023-10-21 15:19:43,408 - 408 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:43,408 - 408 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:45,446 - 446 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:45,446 - 446 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:47,484 - 484 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:47,484 - 484 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:49,531 - 531 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:49,531 - 531 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:51,578 - 578 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:51,578 - 578 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:53,662 - 662 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:53,662 - 662 - INFO - {'last_price': 213.3}
+2023-10-21 15:19:55,719 - 719 - INFO - {'last_price': 29755.03}
+2023-10-21 15:19:55,719 - 719 - INFO - {'last_price': 29755.03}
+2023-10-21 15:19:57,760 - 760 - INFO - {'last_price': 1607.1}
+2023-10-21 15:19:57,760 - 760 - INFO - {'last_price': 1607.1}
+2023-10-21 15:19:59,812 - 812 - INFO - {'last_price': 29755.02}
+2023-10-21 15:19:59,812 - 812 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:01,865 - 865 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:01,865 - 865 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:03,899 - 899 - INFO - {'last_price': 1607.13}
+2023-10-21 15:20:03,899 - 899 - INFO - {'last_price': 1607.13}
+2023-10-21 15:20:05,932 - 932 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:05,932 - 932 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:07,974 - 974 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:07,974 - 974 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:10,017 - 17 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:10,017 - 17 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:12,058 - 58 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:12,059 - 59 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:14,088 - 88 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:14,088 - 88 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:16,141 - 141 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:16,141 - 141 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:18,174 - 174 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:18,174 - 174 - INFO - {'last_price': 29755.02}
+2023-10-21 15:20:20,222 - 222 - INFO - {'last_price': 213.3}
+2023-10-21 15:20:20,222 - 222 - INFO - {'last_price': 213.3}
+2023-10-21 15:20:22,269 - 269 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:22,271 - 271 - INFO - {'last_price': 29755.03}
+2023-10-21 15:20:24,306 - 306 - INFO - {'last_price': 29756.82}
+2023-10-21 15:20:24,306 - 306 - INFO - {'last_price': 29756.82}

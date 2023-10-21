@@ -2,13 +2,12 @@ import logging
 from logging.handlers import TimedRotatingFileHandler
 import requests
 from flask import Flask
-from App_test_file import response
-import time
+from Application import response
 # Configure logging
 logging.basicConfig(level=logging.DEBUG,
                     format=f"%(asctime)s - %(msecs)d - %(levelname)s - %(message)s",
                     datefmt='%Y-%m-%d_%H-%M-%S',
-                    filename='C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Client_logs/BTCUSDT.log')
+                    filename=f'C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Client_logs/client_log.log')
 
 logger=logging.getLogger("this is the starting root logger")
 logger.setLevel(logging.DEBUG)
@@ -23,7 +22,7 @@ consoleHandler.setFormatter(logFormatter)
 logger.addHandler(consoleHandler)
 
 #add file handler to the root logger for the app_test
-fileHandler= TimedRotatingFileHandler(filename=f'C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Client_logs/BTCUSDT.log',when="midnight", interval=1 ,backupCount=7)
+fileHandler= TimedRotatingFileHandler(filename=f'C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Client_logs/client_log.log',when="midnight", interval=1 ,backupCount=7)
 logger.setLevel(logging.DEBUG)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)

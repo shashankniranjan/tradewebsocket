@@ -1,0 +1,196 @@
+2023-10-21 15:25:28,783 - 783 - INFO - {'last_price': 29799.64}
+2023-10-21 15:25:28,783 - 783 - INFO - {'last_price': 29799.64}
+2023-10-21 15:25:30,817 - 817 - INFO - {'last_price': 29799.79}
+2023-10-21 15:25:30,817 - 817 - INFO - {'last_price': 29799.79}
+2023-10-21 15:25:32,893 - 893 - INFO - {'last_price': 29799.8}
+2023-10-21 15:25:32,898 - 898 - INFO - {'last_price': 29799.8}
+2023-10-21 15:25:34,961 - 961 - INFO - {'last_price': 29802.6}
+2023-10-21 15:25:34,961 - 961 - INFO - {'last_price': 29802.6}
+2023-10-21 15:25:37,018 - 18 - INFO - {'last_price': 29808.69}
+2023-10-21 15:25:37,018 - 18 - INFO - {'last_price': 29808.69}
+2023-10-21 15:25:39,104 - 104 - INFO - {'last_price': 29810.0}
+2023-10-21 15:25:39,104 - 104 - INFO - {'last_price': 29810.0}
+2023-10-21 15:25:41,148 - 148 - INFO - {'last_price': 29812.81}
+2023-10-21 15:25:41,148 - 148 - INFO - {'last_price': 29812.81}
+2023-10-21 15:25:43,196 - 196 - INFO - {'last_price': 29814.77}
+2023-10-21 15:25:43,196 - 196 - INFO - {'last_price': 29814.77}
+2023-10-21 15:25:45,249 - 249 - INFO - {'last_price': 29823.57}
+2023-10-21 15:25:45,249 - 249 - INFO - {'last_price': 29823.57}
+2023-10-21 15:25:47,318 - 318 - INFO - {'last_price': 29827.11}
+2023-10-21 15:25:47,319 - 319 - INFO - {'last_price': 29827.11}
+2023-10-21 15:25:49,349 - 349 - INFO - {'last_price': 29832.38}
+2023-10-21 15:25:49,349 - 349 - INFO - {'last_price': 29832.38}
+2023-10-21 15:25:51,386 - 386 - INFO - {'last_price': 29825.74}
+2023-10-21 15:25:51,387 - 387 - INFO - {'last_price': 29825.74}
+2023-10-21 15:25:53,413 - 413 - INFO - {'last_price': 29819.53}
+2023-10-21 15:25:53,413 - 413 - INFO - {'last_price': 29819.53}
+2023-10-21 15:25:55,463 - 463 - INFO - {'last_price': 29811.03}
+2023-10-21 15:25:55,463 - 463 - INFO - {'last_price': 29811.03}
+2023-10-21 15:25:57,527 - 527 - INFO - {'last_price': 29800.0}
+2023-10-21 15:25:57,529 - 529 - INFO - {'last_price': 29800.0}
+2023-10-21 15:25:59,566 - 566 - INFO - {'last_price': 1607.22}
+2023-10-21 15:25:59,577 - 577 - INFO - {'last_price': 1607.22}
+2023-10-21 15:26:01,616 - 616 - INFO - {'last_price': 29812.56}
+2023-10-21 15:26:01,616 - 616 - INFO - {'last_price': 29812.56}
+2023-10-21 15:26:03,681 - 681 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:03,683 - 683 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:05,750 - 750 - INFO - {'last_price': 29813.12}
+2023-10-21 15:26:05,750 - 750 - INFO - {'last_price': 29813.12}
+2023-10-21 15:26:07,825 - 825 - INFO - {'last_price': 29813.12}
+2023-10-21 15:26:07,829 - 829 - INFO - {'last_price': 29813.12}
+2023-10-21 15:26:09,905 - 905 - INFO - {'last_price': 29819.21}
+2023-10-21 15:26:09,905 - 905 - INFO - {'last_price': 29819.21}
+2023-10-21 15:26:12,006 - 6 - INFO - {'last_price': 29824.36}
+2023-10-21 15:26:12,009 - 9 - INFO - {'last_price': 29824.36}
+2023-10-21 15:26:14,074 - 74 - INFO - {'last_price': 29824.37}
+2023-10-21 15:26:14,074 - 74 - INFO - {'last_price': 29824.37}
+2023-10-21 15:26:16,127 - 127 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:16,127 - 127 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:18,209 - 209 - INFO - {'last_price': 29825.0}
+2023-10-21 15:26:18,209 - 209 - INFO - {'last_price': 29825.0}
+2023-10-21 15:26:20,280 - 280 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:20,280 - 280 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:22,345 - 345 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:22,345 - 345 - INFO - {'last_price': 29824.99}
+2023-10-21 15:26:24,390 - 390 - INFO - {'last_price': 29832.78}
+2023-10-21 15:26:24,390 - 390 - INFO - {'last_price': 29832.78}
+2023-10-21 15:26:26,465 - 465 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:26,466 - 466 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:28,508 - 508 - INFO - {'last_price': 29832.78}
+2023-10-21 15:26:28,508 - 508 - INFO - {'last_price': 29832.78}
+2023-10-21 15:26:30,561 - 561 - INFO - {'last_price': 29832.98}
+2023-10-21 15:26:30,561 - 561 - INFO - {'last_price': 29832.98}
+2023-10-21 15:26:32,617 - 617 - INFO - {'last_price': 29833.33}
+2023-10-21 15:26:32,617 - 617 - INFO - {'last_price': 29833.33}
+2023-10-21 15:26:34,637 - 637 - INFO - {'last_price': 29833.32}
+2023-10-21 15:26:34,637 - 637 - INFO - {'last_price': 29833.32}
+2023-10-21 15:26:36,701 - 701 - INFO - {'last_price': 29837.81}
+2023-10-21 15:26:36,703 - 703 - INFO - {'last_price': 29837.81}
+2023-10-21 15:26:38,779 - 779 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:38,780 - 780 - INFO - {'last_price': 213.3}
+2023-10-21 15:26:40,839 - 839 - INFO - {'last_price': 29865.54}
+2023-10-21 15:26:40,839 - 839 - INFO - {'last_price': 29865.54}
+2023-10-21 15:26:42,905 - 905 - INFO - {'last_price': 29849.36}
+2023-10-21 15:26:42,905 - 905 - INFO - {'last_price': 29849.36}
+2023-10-21 15:26:44,959 - 959 - INFO - {'last_price': 29848.01}
+2023-10-21 15:26:44,960 - 960 - INFO - {'last_price': 29848.01}
+2023-10-21 15:26:47,027 - 27 - INFO - {'last_price': 1608.54}
+2023-10-21 15:26:47,029 - 29 - INFO - {'last_price': 1608.54}
+2023-10-21 15:26:49,068 - 68 - INFO - {'last_price': 29850.0}
+2023-10-21 15:26:49,068 - 68 - INFO - {'last_price': 29850.0}
+2023-10-21 15:26:51,141 - 141 - INFO - {'last_price': 1608.54}
+2023-10-21 15:26:51,142 - 142 - INFO - {'last_price': 1608.54}
+2023-10-21 15:26:53,185 - 185 - INFO - {'last_price': 1608.61}
+2023-10-21 15:26:53,187 - 187 - INFO - {'last_price': 1608.61}
+2023-10-21 15:26:55,228 - 228 - INFO - {'last_price': 29858.01}
+2023-10-21 15:26:55,228 - 228 - INFO - {'last_price': 29858.01}
+2023-10-21 15:26:57,262 - 262 - INFO - {'last_price': 29849.02}
+2023-10-21 15:26:57,262 - 262 - INFO - {'last_price': 29849.02}
+2023-10-21 15:26:59,331 - 331 - INFO - {'last_price': 29843.47}
+2023-10-21 15:26:59,331 - 331 - INFO - {'last_price': 29843.47}
+2023-10-21 15:27:01,370 - 370 - INFO - {'last_price': 1608.41}
+2023-10-21 15:27:01,378 - 378 - INFO - {'last_price': 1608.41}
+2023-10-21 16:17:30,236 - 236 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:30,236 - 236 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:32,284 - 284 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:32,284 - 284 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:34,323 - 323 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:34,324 - 324 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:36,363 - 363 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:36,364 - 364 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:38,391 - 391 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:38,391 - 391 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:40,425 - 425 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:17:40,426 - 426 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:17:42,457 - 457 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:42,458 - 458 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:44,495 - 495 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:44,495 - 495 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:46,522 - 522 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:46,522 - 522 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:48,556 - 556 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:48,556 - 556 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:50,578 - 578 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:50,578 - 578 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:52,601 - 601 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:52,601 - 601 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:17:54,636 - 636 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:54,636 - 636 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:17:56,678 - 678 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:17:56,679 - 679 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:17:58,718 - 718 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:17:58,719 - 719 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:00,746 - 746 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:00,746 - 746 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:02,781 - 781 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:02,781 - 781 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:04,813 - 813 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:04,813 - 813 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:06,852 - 852 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:06,852 - 852 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:08,894 - 894 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:08,894 - 894 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:10,948 - 948 - INFO - {'last_price': 1605.84, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:10,949 - 949 - INFO - {'last_price': 1605.84, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:13,000 - 0 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:13,000 - 0 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:15,034 - 34 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:15,034 - 34 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:17,066 - 66 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:17,066 - 66 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:19,115 - 115 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:19,115 - 115 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:21,145 - 145 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:21,145 - 145 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:23,193 - 193 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:23,193 - 193 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:25,215 - 215 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:25,215 - 215 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:27,239 - 239 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:27,239 - 239 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:29,262 - 262 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:29,262 - 262 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:31,302 - 302 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:31,302 - 302 - INFO - {'last_price': 29787.36, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:33,326 - 326 - INFO - {'last_price': 29787.37, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:33,326 - 326 - INFO - {'last_price': 29787.37, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:35,351 - 351 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:35,351 - 351 - INFO - {'last_price': 1605.85, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:37,375 - 375 - INFO - {'last_price': 29789.18, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:37,375 - 375 - INFO - {'last_price': 29789.18, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:39,415 - 415 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:39,415 - 415 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:41,438 - 438 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:41,438 - 438 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:43,462 - 462 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:43,462 - 462 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:45,485 - 485 - INFO - {'last_price': 1605.88, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:45,485 - 485 - INFO - {'last_price': 1605.88, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:47,539 - 539 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:47,539 - 539 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:49,562 - 562 - INFO - {'last_price': 1605.88, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:49,562 - 562 - INFO - {'last_price': 1605.88, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:51,586 - 586 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:51,586 - 586 - INFO - {'last_price': 213.0, 'symbol': 'BNBUSDT'}
+2023-10-21 16:18:53,634 - 634 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:53,634 - 634 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:55,662 - 662 - INFO - {'last_price': 29789.24, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:55,662 - 662 - INFO - {'last_price': 29789.24, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:57,699 - 699 - INFO - {'last_price': 1605.87, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:57,699 - 699 - INFO - {'last_price': 1605.87, 'symbol': 'ETHUSDT'}
+2023-10-21 16:18:59,738 - 738 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:18:59,738 - 738 - INFO - {'last_price': 29789.23, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:01,762 - 762 - INFO - {'last_price': 1605.71, 'symbol': 'ETHUSDT'}
+2023-10-21 16:19:01,762 - 762 - INFO - {'last_price': 1605.71, 'symbol': 'ETHUSDT'}
+2023-10-21 16:19:03,787 - 787 - INFO - {'last_price': 29787.79, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:03,787 - 787 - INFO - {'last_price': 29787.79, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:05,812 - 812 - INFO - {'last_price': 29787.78, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:05,812 - 812 - INFO - {'last_price': 29787.78, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:07,852 - 852 - INFO - {'last_price': 29787.79, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:07,852 - 852 - INFO - {'last_price': 29787.79, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:09,877 - 877 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:19:09,877 - 877 - INFO - {'last_price': 212.9, 'symbol': 'BNBUSDT'}
+2023-10-21 16:19:11,917 - 917 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:11,917 - 917 - INFO - {'last_price': 29786.71, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:13,941 - 941 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}
+2023-10-21 16:19:13,941 - 941 - INFO - {'last_price': 29786.72, 'symbol': 'BTCUSDT'}

@@ -46,39 +46,50 @@ logger.setLevel(logging.INFO)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
+websocket_handler= TimedRotatingFileHandler(filename='C:/BOX_1/binancewebsocketcreation/clean_websocket_code/websocket_logs/websocket_logs.log',when="midnight", interval=1 ,backupCount=12)
+logger.setLevel(logging.INFO)
+websocket_handler.setFormatter(logFormatter)
+logger.addHandler(websocket_handler)
+
 last_price = None
 last_update_time = None
 response = None
-
+symbol=None
 @app.route('/ltm')
 def get_last_msg():
     return response
 
 @app.route('/ltp')#returns last price for the given asset
 def get_last_price():
-    global last_price, last_update_time, response,trade_data
-    try:
-        trade_data = json.loads(response)
-    except Exception as e:
-        logging.error(response)
+  global last_price, last_update_time, response, trade_data, symbol
 
-    logging.info(trade_data)
+  try:
+    trade_data = json.loads(response)
+  except Exception as e:
+    logging.error(response)
 
-    if 'p' in trade_data:
-        last_price = float(trade_data['p'])
-        last_update_time = time.time()
-        current_time = time.time()
-        if last_price is not None and last_update_time is not None and current_time - last_update_time <= 5:
-            response_data = {"last_price": last_price}
-            logger.info("last_price - " + str(last_price))
-            response = make_response(jsonify(response_data), 200)  # 200 means success
-            return response
-        else:
-            response_data = {"message": "No recent data available"}
-            logger.error("last_price - " + str(last_price))
-            logger.error("message - No recent data available")
-            response = make_response(jsonify(response_data), 404)
-            return response
+  logging.info(trade_data)
+
+  if 'p' in trade_data:
+    last_price = float(trade_data['p'])
+    symbol = trade_data['s']
+    last_update_time = time.time()
+    current_time = time.time()
+
+    if last_price is not None and last_update_time is not None and current_time - last_update_time <= 5:
+      response_data = {
+        "last_price": last_price,
+        "symbol": symbol,
+      }
+      logger.info(f"last_price -symbol- {last_price} - {symbol}")
+      response = make_response(jsonify(response_data), 200)  # 200 means success
+      return response
+    else:
+      response_data = {"message": "No recent data available"}
+      logger.error(f"last_price -symbol- {last_price} - {symbol}")
+      logger.error("message - No recent data available")
+      response = make_response(jsonify(response_data), 404)
+      return response
 
 #This is where the base websocket server is embedded into the application.
 @app.route('/')
@@ -116,7 +127,7 @@ def on_message(ws, message):
     app.logger.info(f"{current_time} - {message}")
     print(current_time," ",message)
 
-    file_path ='C:/BOX_1/binancewebsocketcreation/Binance_Websocket_test/Web_socket_Stream_logs/websocket_stream_log.log' #choose your file path
+    file_path ='C:/BOX_1/binancewebsocketcreation/clean_websocket_code/websocket_logs/websocket_logs.log' #choose your file path
     with open(file_path, "a") as output_file:
             output_file.write(f"{current_time} - {message}\n")
     
