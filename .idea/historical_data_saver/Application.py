@@ -238,9 +238,5 @@ if __name__ == "__main__":
         # Start the Flask server
         startServer()
 
-    # Keep the main thread alive until all websocket threads have terminated
-        while threading.active_count() > 1: # gets stuck here and hence start server is never called
-          time.sleep(1)
-
     except Exception as e:
         app.logger.error(f"Error starting application: {e}")
