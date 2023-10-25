@@ -234,6 +234,10 @@ if __name__ == "__main__":
         # Create a thread for each currency pair
         for currency_pair in currency_pairs:
             start_websocket_thread(currency_pair)
+    
+    # Keep the main thread alive until all websocket threads have terminated
+        while threading.active_count() > 1:
+          time.sleep(1)
 
         # Start the Flask server
         startServer()
