@@ -35,7 +35,7 @@ fileHandler = TimedRotatingFileHandler(
   filename="C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Application_logs/App_Main_logs.log",
   when="midnight",
   interval=1,
-  backupCount=12,
+  backupCount=30,
 )
 
 # Set the logging level for the handler
@@ -109,7 +109,7 @@ def get_last_price():
 
 @app.route('/ltm')
 def get_last_msg():
-    global response
+    global response,symbol
     #Declares the response variable as a global variable. This means that the response variable can be accessed from within the get_last_msg() function.
     return response
 
@@ -176,11 +176,19 @@ def on_error(ws, error):
       # Reconnect and resubscribe
 
 
-def on_close(ws, close_msg):
+def on_close(ws,close_status_code, close_msg):
     app.logger.critical("the connection was lost")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     app.logger.critical(f"{current_time} - Critical error: {close_msg}")
-    print("closed the connection")
+
+    if close_status_code != 1000:
+    # The connection was closed due to an error.
+      logging.error(f"Connection closed due to error: {close_msg}")
+      startWebSocket(currency_pair)
+    else:
+    # The connection was closed normally.
+        logging.info("Connection closed normally.")
+        print("closed the connection")
 
 def startServer():
   """Logs a message to the info log indicating that the startServer() function has been called.
