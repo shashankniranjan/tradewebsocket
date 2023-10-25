@@ -17,7 +17,7 @@ logging.basicConfig(
   level=logging.INFO,  # Set the logging level to INFO
   format="%(asctime)s - %(msecs)d - %(levelname)s - %(message)s",  # Set the logging format
   datefmt="%Y-%m-%d_%H-%M-%S",  # Set the date format for timestamps
-  filename="C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Application_logs/App_Main_logs.log",  # Set the filename for the log file
+  filename="Application_logs/App_Main_logs.log",  # Set the filename for the log file
 )
 
 # Create a logger object for the current module
@@ -32,7 +32,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 # Create a TimedRotatingFileHandler object
 fileHandler = TimedRotatingFileHandler(
-  filename="C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Application_logs/App_Main_logs.log",
+  filename="Application_logs/App_Main_logs.log",
   when="midnight",
   interval=1,
   backupCount=30,
@@ -161,7 +161,7 @@ def on_message(ws, message):
     #ets the current time and formats it as a string
     app.logger.info(f"{current_time} - {message}")
     print(current_time," ",message)
-    
+
 #this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
     #Logs a message to the error log indicating that the program encountered an error.
@@ -234,12 +234,13 @@ if __name__ == "__main__":
         # Create a thread for each currency pair
         for currency_pair in currency_pairs:
             start_websocket_thread(currency_pair)
-    
-    # Keep the main thread alive until all websocket threads have terminated
-        while threading.active_count() > 1:
-          time.sleep(1)
 
         # Start the Flask server
         startServer()
+
+    # Keep the main thread alive until all websocket threads have terminated
+        while threading.active_count() > 1: # gets stuck here and hence start server is never called
+          time.sleep(1)
+
     except Exception as e:
         app.logger.error(f"Error starting application: {e}")
