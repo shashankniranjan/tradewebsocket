@@ -5,7 +5,7 @@ from logging.handlers import TimedRotatingFileHandler
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-file_handler = TimedRotatingFileHandler('C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Client_logs/client_log.log', when="midnight", interval=1, backupCount=7)
+file_handler = TimedRotatingFileHandler('Client_logs/client_log.log', when="midnight", interval=1, backupCount=7)
 file_handler.setLevel(logging.INFO)
 file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(file_handler)
