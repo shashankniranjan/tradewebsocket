@@ -12,7 +12,7 @@ import threading
 app = Flask(__name__)
 
 # Configure the logging module
-logging.basicConfig(filename="C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Application_logs/App_Main_logs.log",
+logging.basicConfig(filename="Application_logs/App_Main_logs.log",
             level=logging.INFO,  # Set the logging level to INFO
             format="%(asctime)s - %(msecs)d - %(levelname)s - %(message)s",  # Set the logging format
             datefmt="%Y-%m-%d_%H-%M-%S",  # Set the date format for timestamps  # Set the filename for the log file
@@ -29,7 +29,7 @@ logger.setLevel(logging.INFO)
 from logging.handlers import TimedRotatingFileHandler
 
 # Create a TimedRotatingFileHandler object
-fileHandler = TimedRotatingFileHandler(filename="C:/BOX_1/binancewebsocketcreation/clean_websocket_code/Application_logs/App_Main_logs.log",when="midnight",interval=1,backupCount=30,)
+fileHandler = TimedRotatingFileHandler(filename="Application_logs/App_Main_logs.log",when="midnight",interval=1,backupCount=30,)
 
 # Set the logging level for the handler
 fileHandler.setLevel(logging.INFO)
