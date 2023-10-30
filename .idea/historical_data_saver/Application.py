@@ -160,7 +160,7 @@ def on_error(ws, error):
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     logging.error(f"{current_time} - {error} - {response}")
     # logger.error(response)
-    #time.sleep(5)  # Wait for 5 seconds before resubscribing
+    time.sleep(5)  # Wait for 5 seconds before resubscribing
     ws.close()  # Close the existing WebSocket connection1
     startWebSocket(currency_pair)
     #statement starts a new WebSocket connection. This is necessary because the old WebSocket connection cannot be reused.
@@ -211,36 +211,39 @@ def startServer():
     except Exception as error:
         logging.error(f"{error}")
 
-
 if __name__ == "__main__":
     try:
-        # Create a list of currency pairs.
-        currency_pairs = ["btcusdt"]
+            # Create a list of currency pairs.
+            currency_pairs = ["btcusdt"]
 
-        # Start a websocket thread for each currency pair.
-        threads = []
-        for currency_pair in currency_pairs:
-            threads.append(threading.Thread(target=start_websocket_thread, args=(currency_pair,)))
+            # Start a websocket thread for each currency pair.
+            for currency_pair in currency_pairs:
+                threads = [threading.Thread(target=start_websocket_thread, args=(currency_pair,))]
 
-        # Start all of the websocket threads.
-        for thread in threads:
-            thread.start()
+                    # Start all of the websocket threads.
+                for thread in threads:
+                    thread.start()
 
-        while True:
-                    # Wait for the Flask server to terminate.
-                    startServer()
+                    # Loop forever, restarting the Flask server if it terminates.
+                    while True:
+                        startServer()
 
-                    # If the Flask server terminates, restart it.
-                    logging.info("Restarting the Flask server...")
+                        # If the Flask server terminates, restart it.
+                        logging.info("Restarting the Flask server...")
 
-                    # Terminate all of the websocket threads.
-                    for thread in threads:
-                        thread.terminate()
+                        for thread in threads:
+                            thread.start()
 
-                    # Start all of the websocket threads again.
-                    for thread in threads:
-                        thread.start()
+                            
+                        for thread in threads:
+                            thread.join()
+
     finally:
-        # Clean up all of the websocket threads.
-        for thread in threads:
-            thread.terminate()
+            currency_pairs = ["btcusdt"]
+
+            # Start a websocket thread for each currency pair.
+            for currency_pair in currency_pairs:
+                threads = [threading.Thread(target=thread)]
+                for thread in threads:
+                    thread.join()
+                
