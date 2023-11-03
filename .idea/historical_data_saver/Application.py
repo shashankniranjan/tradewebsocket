@@ -21,14 +21,31 @@ logging.basicConfig(filename="Application_logs/App_Main_logs.log",
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
 
-file_handler = TimedRotatingFileHandler("Application_logs/App_Main_logs.log", when="midnight", interval=1, backupCount=30)
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(logging.Formatter('%(asctime)s - %(msecs)d - %(levelname)s - %(message)s'))
-logger.addHandler(file_handler)
+# Set the logging level for the logger object
+logger.setLevel(logging.INFO)
+
+
+# Import the TimedRotatingFileHandler class from the logging module
+from logging.handlers import TimedRotatingFileHandler
+
+# Create a TimedRotatingFileHandler object
+fileHandler = TimedRotatingFileHandler(filename="Application_logs/App_Main_logs.log",when="midnight",interval=1,backupCount=30,)
+
+# Set the logging level for the handler
+fileHandler.setLevel(logging.INFO)
+
+# Create a formatter object
+logFormatter = logging.Formatter("%(asctime)s - %(msecs)d - %(levelname)s - %(message)s")
+
+# Set the formatter for the handler
+fileHandler.setFormatter(logFormatter)
+
+# Add the handler to the logger
+logger.addHandler(fileHandler)
+
 
 
 # Initialize variables
-
 last_price = None
 last_update_time = None
 response = None
@@ -143,8 +160,8 @@ def on_error(ws, error):
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     logger.error(f"{current_time} - {error} - {response}")
     # logger.error(response)
-    ws.close() # Close the existing WebSocket connection
     time.sleep(5)  # Wait for 5 seconds before resubscribing
+    ws.close() # Close the existing WebSocket connection
     startWebSocket(currency_pair)
     #statement starts a new WebSocket connection. This is necessary because the old WebSocket connection cannot be reused.
     # Reconnect and resubscribe
@@ -215,10 +232,11 @@ if __name__ == "__main__":
                 # If the websocket thread was successfully created and started, add it to the list
                 if thread is not None:
                     threads.append(thread)
+
     finally:
             # Wait for all of the websocket threads to finish running
-            try:
-                for threads in thread:
+            
+#for thread in threads:
                     thread.join()
-            except:
-                logger.error("the program closed unexpectedly")
+            
+                    logger.error("the program closed unexpectedly")
