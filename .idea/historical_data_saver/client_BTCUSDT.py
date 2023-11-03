@@ -9,7 +9,9 @@ file_handler = TimedRotatingFileHandler('Client_logs/client_log.log', when="midn
 file_handler.setLevel(logging.INFO)
 file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(file_handler)
-#this call the last message from the websocket server
+
+
+# this call the last message from the websocket server
 def get_last_msg():
     try:
         response = requests.get('http://localhost:5000/ltm')
@@ -19,7 +21,8 @@ def get_last_msg():
     except Exception as e:
         logger.error(f"Exception Occured {e}")
 
-#this code will run indefinitively and until this prints the data it will keep on running
+
+# this code will run indefinitively and until this prints the data it will keep on running
 if __name__ == "__main__":
     while True:
         ltm = get_last_msg()
