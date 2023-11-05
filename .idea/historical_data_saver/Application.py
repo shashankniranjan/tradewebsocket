@@ -214,29 +214,30 @@ def startServer():
 
 if __name__ == "__main__":
     try:
-            # Start the server thread
-            server_thread = threading.Thread(target=startServer)
-            server_thread.daemon = True
-            server_thread.start()
+        # Start the server thread
+        server_thread = threading.Thread(target=startServer)
+        server_thread.daemon = True
+        server_thread.start()
 
-            # Create a list of currency pairs
-            currency_pairs = ["btcusdt"]
+        # Load the currency pairs from the configuration file
+        with open("configuration_file.txt", "r") as f:
+            currency_pairs = f.read().splitlines()
 
-            # Create an empty list to store the websocket threads
-            threads = []
+        # Create an empty list to store the websocket threads
+        threads = []
 
-            # Iterate over the list of currency pairs and start a new websocket thread for each currency pair
-            for currency_pair in currency_pairs:
-                thread = start_websocket_thread(currency_pair)
+        # Iterate over the list of currency pairs and start a new websocket thread for each currency pair
+        for currency_pair in currency_pairs:
+            thread = start_websocket_thread(currency_pair)
 
-                # If the websocket thread was successfully created and started, add it to the list
-                if thread is not None:
-                    threads.append(thread)
+            # If the websocket thread was successfully created and started, add it to the list
+            if thread is not None:
+                threads.append(thread)
 
     finally:
-            # Wait for all of the websocket threads to finish running
-            
-#for thread in threads:
-                    thread.join()
-            
-                    logger.error("the program closed unexpectedly")
+        # Wait for all of the websocket threads to finish running
+        #r thread in threads:
+                thread.join()
+
+        # If the program closed unexpectedly, log an error message
+                logger.error("the program closed unexpectedly")
