@@ -10,39 +10,13 @@ import threading
 
 # Create a Flask application instance
 app = Flask(__name__)
-
-# Configure the logging module
-logging.basicConfig(filename="Application_logs/App_Main_logs.log",
-            level=logging.INFO,  # Set the logging level to INFO
-            format="%(asctime)s - %(msecs)d - %(levelname)s - %(message)s",  # Set the logging format
-            datefmt="%Y-%m-%d_%H-%M-%S",  # Set the date format for timestamps  # Set the filename for the log file
-            )
-
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
-
-# Set the logging level for the logger object
-logger.setLevel(logging.INFO)
-
-
-# Import the TimedRotatingFileHandler class from the logging module
-from logging.handlers import TimedRotatingFileHandler
-
-# Create a TimedRotatingFileHandler object
-fileHandler = TimedRotatingFileHandler(filename="Application_logs/App_Main_logs.log",when="midnight",interval=1,backupCount=30,)
-
-# Set the logging level for the handler
-fileHandler.setLevel(logging.INFO)
-
-# Create a formatter object
-logFormatter = logging.Formatter("%(asctime)s - %(msecs)d - %(levelname)s - %(message)s")
-
-# Set the formatter for the handler
-fileHandler.setFormatter(logFormatter)
-
-# Add the handler to the logger
-logger.addHandler(fileHandler)
-
+logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
+file_handler = TimedRotatingFileHandler("Application_logs/App_Main_logs.log", when="midnight", interval=1, backupCount=30)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
+file_handler.setLevel(logging.INFO) # Set the logging level for the logger object
+file_handler.setFormatter(logging.Formatter("%(levelname)s - %(msecs)d - %(message)s"))# Set the formatter for the handler
+logger.addHandler(file_handler)# Add the handler to the logge
 
 
 # Initialize variables
@@ -126,11 +100,6 @@ def startWebSocket(currency_pair):
             logging.error(f"Error starting websocket for {currency_pair}: {e}")
             #This line catches any exceptions that occur while starting the websocket and logs an error message.
             time.sleep(1)
-            
-def get_websocket_url(currency_pair):
-    return f"wss://stream.binance.com:9443/ws/{currency_pair}@aggTrade"
-#The symbol of the asset being tracked.
-
 
 def on_open(ws):
     #Prints a message to the console indicating that the websocket has been opened.

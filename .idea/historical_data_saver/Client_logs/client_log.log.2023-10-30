@@ -1,0 +1,268 @@
+2023-10-30 19:11:34,865 - INFO - {'e': 'aggTrade', 'E': 1698673256192, 's': 'BTCUSDT', 'a': 2742248411, 'p': '34709.62000000', 'q': '0.00124000', 'f': 3261926442, 'l': 3261926442, 'T': 1698673256191, 'm': False, 'M': True}
+2023-10-30 19:11:34,876 - INFO - {'e': 'aggTrade', 'E': 1698673256192, 's': 'BTCUSDT', 'a': 2742248411, 'p': '34709.62000000', 'q': '0.00124000', 'f': 3261926442, 'l': 3261926442, 'T': 1698673256191, 'm': False, 'M': True}
+2023-10-30 19:12:26,027 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6AF2F90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:26,034 - ERROR - No data available
+2023-10-30 19:12:30,097 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B05110>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:30,097 - ERROR - No data available
+2023-10-30 19:12:34,151 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B073D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:34,151 - ERROR - No data available
+2023-10-30 19:12:38,227 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B15390>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:38,229 - ERROR - No data available
+2023-10-30 19:12:42,302 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B17310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:42,302 - ERROR - No data available
+2023-10-30 19:12:46,405 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B17410>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:12:46,405 - ERROR - No data available
+2023-10-30 19:12:49,631 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:12:49,632 - ERROR - No data available
+2023-10-30 19:12:52,266 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:12:52,271 - ERROR - No data available
+2023-10-30 19:13:15,632 - ERROR - Exception Occured ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2023-10-30 19:13:15,633 - ERROR - No data available
+2023-10-30 19:13:19,679 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000210A6B07FD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:19,679 - ERROR - No data available
+2023-10-30 19:13:32,256 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623272F90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:32,256 - ERROR - No data available
+2023-10-30 19:13:36,312 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623285110>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:36,313 - ERROR - No data available
+2023-10-30 19:13:40,362 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A6232873D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:40,363 - ERROR - No data available
+2023-10-30 19:13:44,407 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623295390>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:44,407 - ERROR - No data available
+2023-10-30 19:13:48,477 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623297310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:48,478 - ERROR - No data available
+2023-10-30 19:13:52,530 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623297410>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:52,530 - ERROR - No data available
+2023-10-30 19:13:56,587 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623294F50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:13:56,587 - ERROR - No data available
+2023-10-30 19:14:00,659 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623287DD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:14:00,660 - ERROR - No data available
+2023-10-30 19:14:04,732 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623285A10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:14:04,732 - ERROR - No data available
+2023-10-30 19:14:08,829 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A623273AD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:14:08,829 - ERROR - No data available
+2023-10-30 19:14:11,338 - INFO - {'e': 'aggTrade', 'E': 1698673448353, 's': 'BTCUSDT', 'a': 2742251600, 'p': '34750.82000000', 'q': '0.00100000', 'f': 3261930634, 'l': 3261930634, 'T': 1698673448351, 'm': False, 'M': True}
+2023-10-30 19:14:11,338 - INFO - {'e': 'aggTrade', 'E': 1698673448353, 's': 'BTCUSDT', 'a': 2742251600, 'p': '34750.82000000', 'q': '0.00100000', 'f': 3261930634, 'l': 3261930634, 'T': 1698673448351, 'm': False, 'M': True}
+2023-10-30 19:14:14,098 - INFO - {'e': 'aggTrade', 'E': 1698673448680, 's': 'BTCUSDT', 'a': 2742251602, 'p': '34750.81000000', 'q': '0.00079000', 'f': 3261930636, 'l': 3261930636, 'T': 1698673448679, 'm': True, 'M': True}
+2023-10-30 19:14:14,100 - INFO - {'e': 'aggTrade', 'E': 1698673448680, 's': 'BTCUSDT', 'a': 2742251602, 'p': '34750.81000000', 'q': '0.00079000', 'f': 3261930636, 'l': 3261930636, 'T': 1698673448679, 'm': True, 'M': True}
+2023-10-30 19:14:16,888 - INFO - {'e': 'aggTrade', 'E': 1698673448690, 's': 'BTCUSDT', 'a': 2742251603, 'p': '34750.81000000', 'q': '0.02400000', 'f': 3261930637, 'l': 3261930637, 'T': 1698673448689, 'm': True, 'M': True}
+2023-10-30 19:14:16,888 - INFO - {'e': 'aggTrade', 'E': 1698673448690, 's': 'BTCUSDT', 'a': 2742251603, 'p': '34750.81000000', 'q': '0.02400000', 'f': 3261930637, 'l': 3261930637, 'T': 1698673448689, 'm': True, 'M': True}
+2023-10-30 19:14:23,573 - INFO - {'e': 'aggTrade', 'E': 1698673448690, 's': 'BTCUSDT', 'a': 2742251603, 'p': '34750.81000000', 'q': '0.02400000', 'f': 3261930637, 'l': 3261930637, 'T': 1698673448689, 'm': True, 'M': True}
+2023-10-30 19:14:23,576 - INFO - {'e': 'aggTrade', 'E': 1698673448690, 's': 'BTCUSDT', 'a': 2742251603, 'p': '34750.81000000', 'q': '0.02400000', 'f': 3261930637, 'l': 3261930637, 'T': 1698673448689, 'm': True, 'M': True}
+2023-10-30 19:14:25,852 - INFO - {'e': 'aggTrade', 'E': 1698673448711, 's': 'BTCUSDT', 'a': 2742251605, 'p': '34750.81000000', 'q': '0.01300000', 'f': 3261930640, 'l': 3261930641, 'T': 1698673448710, 'm': True, 'M': True}
+2023-10-30 19:14:25,852 - INFO - {'e': 'aggTrade', 'E': 1698673448711, 's': 'BTCUSDT', 'a': 2742251605, 'p': '34750.81000000', 'q': '0.01300000', 'f': 3261930640, 'l': 3261930641, 'T': 1698673448710, 'm': True, 'M': True}
+2023-10-30 19:14:33,353 - INFO - {'e': 'aggTrade', 'E': 1698673448740, 's': 'BTCUSDT', 'a': 2742251607, 'p': '34750.81000000', 'q': '0.06676000', 'f': 3261930643, 'l': 3261930644, 'T': 1698673448740, 'm': True, 'M': True}
+2023-10-30 19:14:33,353 - INFO - {'e': 'aggTrade', 'E': 1698673448740, 's': 'BTCUSDT', 'a': 2742251607, 'p': '34750.81000000', 'q': '0.06676000', 'f': 3261930643, 'l': 3261930644, 'T': 1698673448740, 'm': True, 'M': True}
+2023-10-30 19:14:35,751 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251609, 'p': '34750.72000000', 'q': '0.00070000', 'f': 3261930646, 'l': 3261930646, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:35,751 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251609, 'p': '34750.72000000', 'q': '0.00070000', 'f': 3261930646, 'l': 3261930646, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:38,598 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251611, 'p': '34750.58000000', 'q': '0.00021000', 'f': 3261930648, 'l': 3261930648, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:38,598 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251611, 'p': '34750.58000000', 'q': '0.00021000', 'f': 3261930648, 'l': 3261930648, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:40,822 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251613, 'p': '34750.23000000', 'q': '0.00021000', 'f': 3261930650, 'l': 3261930650, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:40,823 - INFO - {'e': 'aggTrade', 'E': 1698673448759, 's': 'BTCUSDT', 'a': 2742251613, 'p': '34750.23000000', 'q': '0.00021000', 'f': 3261930650, 'l': 3261930650, 'T': 1698673448758, 'm': True, 'M': True}
+2023-10-30 19:14:43,232 - INFO - {'e': 'aggTrade', 'E': 1698673448766, 's': 'BTCUSDT', 'a': 2742251617, 'p': '34749.84000000', 'q': '0.00070000', 'f': 3261930656, 'l': 3261930656, 'T': 1698673448765, 'm': True, 'M': True}
+2023-10-30 19:14:43,233 - INFO - {'e': 'aggTrade', 'E': 1698673448766, 's': 'BTCUSDT', 'a': 2742251617, 'p': '34749.84000000', 'q': '0.00070000', 'f': 3261930656, 'l': 3261930656, 'T': 1698673448765, 'm': True, 'M': True}
+2023-10-30 19:39:49,292 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:39:49,292 - ERROR - No data available
+2023-10-30 19:39:51,338 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:39:51,338 - ERROR - No data available
+2023-10-30 19:39:53,381 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:39:53,382 - ERROR - No data available
+2023-10-30 19:39:55,428 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:39:55,429 - ERROR - No data available
+2023-10-30 19:39:58,499 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:39:58,499 - ERROR - No data available
+2023-10-30 19:40:00,550 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:00,550 - ERROR - No data available
+2023-10-30 19:40:02,605 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:02,606 - ERROR - No data available
+2023-10-30 19:40:04,669 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:04,669 - ERROR - No data available
+2023-10-30 19:40:06,717 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:06,718 - ERROR - No data available
+2023-10-30 19:40:08,787 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:08,788 - ERROR - No data available
+2023-10-30 19:40:10,846 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:10,846 - ERROR - No data available
+2023-10-30 19:40:12,894 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:12,895 - ERROR - No data available
+2023-10-30 19:40:14,951 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:14,951 - ERROR - No data available
+2023-10-30 19:40:16,993 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:16,994 - ERROR - No data available
+2023-10-30 19:40:21,064 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027A68048C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:40:21,064 - ERROR - No data available
+2023-10-30 19:40:23,112 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:23,112 - ERROR - No data available
+2023-10-30 19:40:25,152 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:25,152 - ERROR - No data available
+2023-10-30 19:40:27,202 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:27,202 - ERROR - No data available
+2023-10-30 19:40:29,265 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:29,265 - ERROR - No data available
+2023-10-30 19:40:31,320 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:31,321 - ERROR - No data available
+2023-10-30 19:40:33,373 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:40:33,373 - ERROR - No data available
+2023-10-30 19:49:37,159 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:37,160 - ERROR - No data available
+2023-10-30 19:49:39,220 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:39,221 - ERROR - No data available
+2023-10-30 19:49:41,268 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:41,269 - ERROR - No data available
+2023-10-30 19:49:43,320 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:43,321 - ERROR - No data available
+2023-10-30 19:49:45,366 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:45,366 - ERROR - No data available
+2023-10-30 19:49:47,427 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:47,428 - ERROR - No data available
+2023-10-30 19:49:49,487 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:49,487 - ERROR - No data available
+2023-10-30 19:49:51,539 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:51,540 - ERROR - No data available
+2023-10-30 19:49:53,598 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:53,598 - ERROR - No data available
+2023-10-30 19:49:55,649 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:55,649 - ERROR - No data available
+2023-10-30 19:49:57,703 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:57,704 - ERROR - No data available
+2023-10-30 19:49:59,746 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:49:59,746 - ERROR - No data available
+2023-10-30 19:50:01,791 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 19:50:01,791 - ERROR - No data available
+2023-10-30 19:59:32,965 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000215AD648190>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 19:59:32,966 - ERROR - No data available
+2023-10-30 20:00:27,119 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000284A6442090>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 20:00:27,119 - ERROR - No data available
+2023-10-30 20:00:31,151 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000284A6AEE390>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 20:00:31,151 - ERROR - No data available
+2023-10-30 20:00:35,227 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000284A6AEE390>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 20:00:35,227 - ERROR - No data available
+2023-10-30 20:00:39,270 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000284A6ACC490>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 20:00:39,270 - ERROR - No data available
+2023-10-30 20:34:11,485 - ERROR - Exception Occured HTTPConnectionPool(host='localhost', port=4001): Max retries exceeded with url: /ltm (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E8A83A7FD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2023-10-30 20:34:11,486 - ERROR - No data available
+2023-10-30 20:38:08,943 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:08,945 - ERROR - No data available
+2023-10-30 20:38:11,013 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:11,014 - ERROR - No data available
+2023-10-30 20:38:13,070 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:13,071 - ERROR - No data available
+2023-10-30 20:38:15,106 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:15,106 - ERROR - No data available
+2023-10-30 20:38:17,131 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:17,131 - ERROR - No data available
+2023-10-30 20:38:19,196 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:19,196 - ERROR - No data available
+2023-10-30 20:38:21,227 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:21,227 - ERROR - No data available
+2023-10-30 20:38:23,272 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:23,273 - ERROR - No data available
+2023-10-30 20:38:25,336 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:25,336 - ERROR - No data available
+2023-10-30 20:38:37,598 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:37,598 - ERROR - No data available
+2023-10-30 20:38:39,668 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:39,669 - ERROR - No data available
+2023-10-30 20:38:41,717 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:41,719 - ERROR - No data available
+2023-10-30 20:38:43,752 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:43,752 - ERROR - No data available
+2023-10-30 20:38:45,802 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:45,802 - ERROR - No data available
+2023-10-30 20:38:47,860 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:47,861 - ERROR - No data available
+2023-10-30 20:38:49,926 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:49,927 - ERROR - No data available
+2023-10-30 20:38:51,978 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:51,979 - ERROR - No data available
+2023-10-30 20:38:54,027 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:54,028 - ERROR - No data available
+2023-10-30 20:38:56,070 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:56,070 - ERROR - No data available
+2023-10-30 20:38:58,115 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:38:58,115 - ERROR - No data available
+2023-10-30 20:39:00,139 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:00,139 - ERROR - No data available
+2023-10-30 20:39:02,165 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:02,165 - ERROR - No data available
+2023-10-30 20:39:04,191 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:04,207 - ERROR - No data available
+2023-10-30 20:39:06,249 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:06,249 - ERROR - No data available
+2023-10-30 20:39:08,288 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:08,288 - ERROR - No data available
+2023-10-30 20:39:10,333 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:10,333 - ERROR - No data available
+2023-10-30 20:39:12,373 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:12,373 - ERROR - No data available
+2023-10-30 20:39:14,400 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:14,415 - ERROR - No data available
+2023-10-30 20:39:16,449 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:16,449 - ERROR - No data available
+2023-10-30 20:39:18,485 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:18,485 - ERROR - No data available
+2023-10-30 20:39:20,512 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:20,512 - ERROR - No data available
+2023-10-30 20:39:22,551 - ERROR - Exception Occured Expecting value: line 1 column 1 (char 0)
+2023-10-30 20:39:22,551 - ERROR - No data available
+2023-10-30 21:07:02,389 - INFO - {'e': 'aggTrade', 'E': 1698680223448, 's': 'BTCUSDT', 'a': 2742350749, 'p': '34659.99000000', 'q': '0.00016000', 'f': 3262057177, 'l': 3262057177, 'T': 1698680223447, 'm': True, 'M': True}
+2023-10-30 21:07:02,402 - INFO - {'e': 'aggTrade', 'E': 1698680223448, 's': 'BTCUSDT', 'a': 2742350749, 'p': '34659.99000000', 'q': '0.00016000', 'f': 3262057177, 'l': 3262057177, 'T': 1698680223447, 'm': True, 'M': True}
+2023-10-30 21:07:04,464 - INFO - {'e': 'aggTrade', 'E': 1698680225024, 's': 'BTCUSDT', 'a': 2742350757, 'p': '34660.00000000', 'q': '0.00044000', 'f': 3262057188, 'l': 3262057188, 'T': 1698680225023, 'm': False, 'M': True}
+2023-10-30 21:07:04,465 - INFO - {'e': 'aggTrade', 'E': 1698680225024, 's': 'BTCUSDT', 'a': 2742350757, 'p': '34660.00000000', 'q': '0.00044000', 'f': 3262057188, 'l': 3262057188, 'T': 1698680225023, 'm': False, 'M': True}
+2023-10-30 21:07:06,516 - INFO - {'e': 'aggTrade', 'E': 1698680227125, 's': 'BTCUSDT', 'a': 2742350829, 'p': '34654.23000000', 'q': '0.02961000', 'f': 3262057299, 'l': 3262057300, 'T': 1698680227123, 'm': True, 'M': True}
+2023-10-30 21:07:06,516 - INFO - {'e': 'aggTrade', 'E': 1698680227125, 's': 'BTCUSDT', 'a': 2742350829, 'p': '34654.23000000', 'q': '0.02961000', 'f': 3262057299, 'l': 3262057300, 'T': 1698680227123, 'm': True, 'M': True}
+2023-10-30 21:07:08,559 - INFO - {'e': 'aggTrade', 'E': 1698680229597, 's': 'BTCUSDT', 'a': 2742350858, 'p': '34655.70000000', 'q': '0.01443000', 'f': 3262057336, 'l': 3262057337, 'T': 1698680229596, 'm': True, 'M': True}
+2023-10-30 21:07:08,563 - INFO - {'e': 'aggTrade', 'E': 1698680229597, 's': 'BTCUSDT', 'a': 2742350858, 'p': '34655.70000000', 'q': '0.01443000', 'f': 3262057336, 'l': 3262057337, 'T': 1698680229596, 'm': True, 'M': True}
+2023-10-30 21:07:10,594 - INFO - {'e': 'aggTrade', 'E': 1698680231626, 's': 'BTCUSDT', 'a': 2742350873, 'p': '34656.40000000', 'q': '0.00901000', 'f': 3262057353, 'l': 3262057353, 'T': 1698680231625, 'm': True, 'M': True}
+2023-10-30 21:07:10,594 - INFO - {'e': 'aggTrade', 'E': 1698680231626, 's': 'BTCUSDT', 'a': 2742350873, 'p': '34656.40000000', 'q': '0.00901000', 'f': 3262057353, 'l': 3262057353, 'T': 1698680231625, 'm': True, 'M': True}
+2023-10-30 21:07:12,661 - INFO - {'e': 'aggTrade', 'E': 1698680233307, 's': 'BTCUSDT', 'a': 2742350879, 'p': '34656.40000000', 'q': '0.00173000', 'f': 3262057359, 'l': 3262057359, 'T': 1698680233306, 'm': True, 'M': True}
+2023-10-30 21:07:12,661 - INFO - {'e': 'aggTrade', 'E': 1698680233307, 's': 'BTCUSDT', 'a': 2742350879, 'p': '34656.40000000', 'q': '0.00173000', 'f': 3262057359, 'l': 3262057359, 'T': 1698680233306, 'm': True, 'M': True}
+2023-10-30 21:07:14,699 - INFO - {'e': 'aggTrade', 'E': 1698680235798, 's': 'BTCUSDT', 'a': 2742350899, 'p': '34658.18000000', 'q': '0.00021000', 'f': 3262057383, 'l': 3262057383, 'T': 1698680235797, 'm': False, 'M': True}
+2023-10-30 21:07:14,699 - INFO - {'e': 'aggTrade', 'E': 1698680235798, 's': 'BTCUSDT', 'a': 2742350899, 'p': '34658.18000000', 'q': '0.00021000', 'f': 3262057383, 'l': 3262057383, 'T': 1698680235797, 'm': False, 'M': True}
+2023-10-30 21:07:16,744 - INFO - {'e': 'aggTrade', 'E': 1698680237743, 's': 'BTCUSDT', 'a': 2742350913, 'p': '34658.49000000', 'q': '0.00185000', 'f': 3262057398, 'l': 3262057398, 'T': 1698680237743, 'm': False, 'M': True}
+2023-10-30 21:07:16,744 - INFO - {'e': 'aggTrade', 'E': 1698680237743, 's': 'BTCUSDT', 'a': 2742350913, 'p': '34658.49000000', 'q': '0.00185000', 'f': 3262057398, 'l': 3262057398, 'T': 1698680237743, 'm': False, 'M': True}
+2023-10-30 21:07:18,812 - INFO - {'e': 'aggTrade', 'E': 1698680239653, 's': 'BTCUSDT', 'a': 2742351018, 'p': '34668.74000000', 'q': '0.02900000', 'f': 3262057528, 'l': 3262057529, 'T': 1698680239652, 'm': True, 'M': True}
+2023-10-30 21:07:18,815 - INFO - {'e': 'aggTrade', 'E': 1698680239653, 's': 'BTCUSDT', 'a': 2742351018, 'p': '34668.74000000', 'q': '0.02900000', 'f': 3262057528, 'l': 3262057529, 'T': 1698680239652, 'm': True, 'M': True}
+2023-10-30 21:07:20,860 - INFO - {'e': 'aggTrade', 'E': 1698680241675, 's': 'BTCUSDT', 'a': 2742351030, 'p': '34668.74000000', 'q': '0.01443000', 'f': 3262057542, 'l': 3262057542, 'T': 1698680241675, 'm': True, 'M': True}
+2023-10-30 21:07:20,860 - INFO - {'e': 'aggTrade', 'E': 1698680241675, 's': 'BTCUSDT', 'a': 2742351030, 'p': '34668.74000000', 'q': '0.01443000', 'f': 3262057542, 'l': 3262057542, 'T': 1698680241675, 'm': True, 'M': True}
+2023-10-30 21:07:22,904 - INFO - {'e': 'aggTrade', 'E': 1698680243989, 's': 'BTCUSDT', 'a': 2742351047, 'p': '34668.74000000', 'q': '0.00577000', 'f': 3262057559, 'l': 3262057559, 'T': 1698680243988, 'm': True, 'M': True}
+2023-10-30 21:07:22,908 - INFO - {'e': 'aggTrade', 'E': 1698680243989, 's': 'BTCUSDT', 'a': 2742351047, 'p': '34668.74000000', 'q': '0.00577000', 'f': 3262057559, 'l': 3262057559, 'T': 1698680243988, 'm': True, 'M': True}
+2023-10-30 21:07:24,950 - INFO - {'e': 'aggTrade', 'E': 1698680245761, 's': 'BTCUSDT', 'a': 2742351072, 'p': '34669.99000000', 'q': '0.00144000', 'f': 3262057588, 'l': 3262057588, 'T': 1698680245760, 'm': True, 'M': True}
+2023-10-30 21:07:24,950 - INFO - {'e': 'aggTrade', 'E': 1698680245761, 's': 'BTCUSDT', 'a': 2742351072, 'p': '34669.99000000', 'q': '0.00144000', 'f': 3262057588, 'l': 3262057588, 'T': 1698680245760, 'm': True, 'M': True}
+2023-10-30 21:07:27,027 - INFO - {'e': 'aggTrade', 'E': 1698680248097, 's': 'BTCUSDT', 'a': 2742351116, 'p': '34673.23000000', 'q': '0.00021000', 'f': 3262057634, 'l': 3262057634, 'T': 1698680248095, 'm': False, 'M': True}
+2023-10-30 21:07:27,028 - INFO - {'e': 'aggTrade', 'E': 1698680248097, 's': 'BTCUSDT', 'a': 2742351116, 'p': '34673.23000000', 'q': '0.00021000', 'f': 3262057634, 'l': 3262057634, 'T': 1698680248095, 'm': False, 'M': True}
+2023-10-30 21:07:29,071 - INFO - {'e': 'aggTrade', 'E': 1698680250156, 's': 'BTCUSDT', 'a': 2742351140, 'p': '34674.99000000', 'q': '0.00062000', 'f': 3262057660, 'l': 3262057660, 'T': 1698680250156, 'm': False, 'M': True}
+2023-10-30 21:07:29,071 - INFO - {'e': 'aggTrade', 'E': 1698680250156, 's': 'BTCUSDT', 'a': 2742351140, 'p': '34674.99000000', 'q': '0.00062000', 'f': 3262057660, 'l': 3262057660, 'T': 1698680250156, 'm': False, 'M': True}
+2023-10-30 21:08:21,386 - INFO - {'e': 'aggTrade', 'E': 1698680302384, 's': 'BTCUSDT', 'a': 2742352060, 'p': '34694.70000000', 'q': '0.00288000', 'f': 3262058773, 'l': 3262058773, 'T': 1698680302383, 'm': False, 'M': True}
+2023-10-30 21:08:21,391 - INFO - {'e': 'aggTrade', 'E': 1698680302384, 's': 'BTCUSDT', 'a': 2742352060, 'p': '34694.70000000', 'q': '0.00288000', 'f': 3262058773, 'l': 3262058773, 'T': 1698680302383, 'm': False, 'M': True}
+2023-10-30 21:08:23,424 - INFO - {'e': 'aggTrade', 'E': 1698680304380, 's': 'BTCUSDT', 'a': 2742352098, 'p': '34690.61000000', 'q': '0.02754000', 'f': 3262058837, 'l': 3262058839, 'T': 1698680304379, 'm': True, 'M': True}
+2023-10-30 21:08:23,424 - INFO - {'e': 'aggTrade', 'E': 1698680304380, 's': 'BTCUSDT', 'a': 2742352098, 'p': '34690.61000000', 'q': '0.02754000', 'f': 3262058837, 'l': 3262058839, 'T': 1698680304379, 'm': True, 'M': True}
+2023-10-30 21:08:25,455 - INFO - {'e': 'aggTrade', 'E': 1698680305679, 's': 'BTCUSDT', 'a': 2742352105, 'p': '34690.62000000', 'q': '0.00039000', 'f': 3262058846, 'l': 3262058846, 'T': 1698680305678, 'm': False, 'M': True}
+2023-10-30 21:08:25,455 - INFO - {'e': 'aggTrade', 'E': 1698680305679, 's': 'BTCUSDT', 'a': 2742352105, 'p': '34690.62000000', 'q': '0.00039000', 'f': 3262058846, 'l': 3262058846, 'T': 1698680305678, 'm': False, 'M': True}
+2023-10-30 21:08:27,494 - INFO - {'e': 'aggTrade', 'E': 1698680308485, 's': 'BTCUSDT', 'a': 2742352128, 'p': '34690.00000000', 'q': '0.00042000', 'f': 3262058872, 'l': 3262058872, 'T': 1698680308484, 'm': True, 'M': True}
+2023-10-30 21:08:27,494 - INFO - {'e': 'aggTrade', 'E': 1698680308485, 's': 'BTCUSDT', 'a': 2742352128, 'p': '34690.00000000', 'q': '0.00042000', 'f': 3262058872, 'l': 3262058872, 'T': 1698680308484, 'm': True, 'M': True}
+2023-10-30 21:08:29,552 - INFO - {'e': 'aggTrade', 'E': 1698680309946, 's': 'BTCUSDT', 'a': 2742352137, 'p': '34690.01000000', 'q': '0.00017000', 'f': 3262058881, 'l': 3262058881, 'T': 1698680309946, 'm': False, 'M': True}
+2023-10-30 21:08:29,552 - INFO - {'e': 'aggTrade', 'E': 1698680309946, 's': 'BTCUSDT', 'a': 2742352137, 'p': '34690.01000000', 'q': '0.00017000', 'f': 3262058881, 'l': 3262058881, 'T': 1698680309946, 'm': False, 'M': True}
+2023-10-30 21:08:31,592 - INFO - {'e': 'aggTrade', 'E': 1698680312693, 's': 'BTCUSDT', 'a': 2742352145, 'p': '34690.00000000', 'q': '0.00578000', 'f': 3262058892, 'l': 3262058892, 'T': 1698680312693, 'm': True, 'M': True}
+2023-10-30 21:08:31,592 - INFO - {'e': 'aggTrade', 'E': 1698680312693, 's': 'BTCUSDT', 'a': 2742352145, 'p': '34690.00000000', 'q': '0.00578000', 'f': 3262058892, 'l': 3262058892, 'T': 1698680312693, 'm': True, 'M': True}
+2023-10-30 21:08:33,642 - INFO - {'e': 'aggTrade', 'E': 1698680313919, 's': 'BTCUSDT', 'a': 2742352151, 'p': '34690.00000000', 'q': '0.01036000', 'f': 3262058898, 'l': 3262058898, 'T': 1698680313918, 'm': True, 'M': True}
+2023-10-30 21:08:33,642 - INFO - {'e': 'aggTrade', 'E': 1698680313919, 's': 'BTCUSDT', 'a': 2742352151, 'p': '34690.00000000', 'q': '0.01036000', 'f': 3262058898, 'l': 3262058898, 'T': 1698680313918, 'm': True, 'M': True}
+2023-10-30 21:08:35,690 - INFO - {'e': 'aggTrade', 'E': 1698680316184, 's': 'BTCUSDT', 'a': 2742352165, 'p': '34690.00000000', 'q': '0.00044000', 'f': 3262058912, 'l': 3262058912, 'T': 1698680316184, 'm': True, 'M': True}
+2023-10-30 21:08:35,690 - INFO - {'e': 'aggTrade', 'E': 1698680316184, 's': 'BTCUSDT', 'a': 2742352165, 'p': '34690.00000000', 'q': '0.00044000', 'f': 3262058912, 'l': 3262058912, 'T': 1698680316184, 'm': True, 'M': True}
+2023-10-30 21:08:37,734 - INFO - {'e': 'aggTrade', 'E': 1698680318823, 's': 'BTCUSDT', 'a': 2742352177, 'p': '34690.00000000', 'q': '0.03795000', 'f': 3262058933, 'l': 3262058933, 'T': 1698680318822, 'm': True, 'M': True}
+2023-10-30 21:08:37,734 - INFO - {'e': 'aggTrade', 'E': 1698680318823, 's': 'BTCUSDT', 'a': 2742352177, 'p': '34690.00000000', 'q': '0.03795000', 'f': 3262058933, 'l': 3262058933, 'T': 1698680318822, 'm': True, 'M': True}
+2023-10-30 21:08:39,756 - INFO - {'e': 'aggTrade', 'E': 1698680320392, 's': 'BTCUSDT', 'a': 2742352183, 'p': '34690.01000000', 'q': '0.00050000', 'f': 3262058939, 'l': 3262058939, 'T': 1698680320392, 'm': False, 'M': True}
+2023-10-30 21:08:39,756 - INFO - {'e': 'aggTrade', 'E': 1698680320392, 's': 'BTCUSDT', 'a': 2742352183, 'p': '34690.01000000', 'q': '0.00050000', 'f': 3262058939, 'l': 3262058939, 'T': 1698680320392, 'm': False, 'M': True}
+2023-10-30 21:08:41,804 - INFO - {'e': 'aggTrade', 'E': 1698680322916, 's': 'BTCUSDT', 'a': 2742352228, 'p': '34685.53000000', 'q': '0.00075000', 'f': 3262059001, 'l': 3262059002, 'T': 1698680322915, 'm': False, 'M': True}
+2023-10-30 21:08:41,804 - INFO - {'e': 'aggTrade', 'E': 1698680322916, 's': 'BTCUSDT', 'a': 2742352228, 'p': '34685.53000000', 'q': '0.00075000', 'f': 3262059001, 'l': 3262059002, 'T': 1698680322915, 'm': False, 'M': True}
+2023-10-30 21:08:43,864 - INFO - {'e': 'aggTrade', 'E': 1698680324822, 's': 'BTCUSDT', 'a': 2742352243, 'p': '34685.52000000', 'q': '0.00043000', 'f': 3262059017, 'l': 3262059017, 'T': 1698680324821, 'm': True, 'M': True}
+2023-10-30 21:08:43,867 - INFO - {'e': 'aggTrade', 'E': 1698680324822, 's': 'BTCUSDT', 'a': 2742352243, 'p': '34685.52000000', 'q': '0.00043000', 'f': 3262059017, 'l': 3262059017, 'T': 1698680324821, 'm': True, 'M': True}
+2023-10-30 21:08:45,939 - INFO - {'e': 'aggTrade', 'E': 1698680326830, 's': 'BTCUSDT', 'a': 2742352413, 'p': '34695.00000000', 'q': '0.01443000', 'f': 3262059283, 'l': 3262059283, 'T': 1698680326829, 'm': True, 'M': True}
+2023-10-30 21:08:45,941 - INFO - {'e': 'aggTrade', 'E': 1698680326830, 's': 'BTCUSDT', 'a': 2742352413, 'p': '34695.00000000', 'q': '0.01443000', 'f': 3262059283, 'l': 3262059283, 'T': 1698680326829, 'm': True, 'M': True}
+2023-10-30 21:08:47,981 - INFO - {'e': 'aggTrade', 'E': 1698680328724, 's': 'BTCUSDT', 'a': 2742352419, 'p': '34695.00000000', 'q': '0.00505000', 'f': 3262059289, 'l': 3262059289, 'T': 1698680328723, 'm': True, 'M': True}
+2023-10-30 21:08:47,985 - INFO - {'e': 'aggTrade', 'E': 1698680328724, 's': 'BTCUSDT', 'a': 2742352419, 'p': '34695.00000000', 'q': '0.00505000', 'f': 3262059289, 'l': 3262059289, 'T': 1698680328723, 'm': True, 'M': True}
+2023-10-30 21:08:50,046 - INFO - {'e': 'aggTrade', 'E': 1698680330982, 's': 'BTCUSDT', 'a': 2742352428, 'p': '34695.01000000', 'q': '0.00303000', 'f': 3262059298, 'l': 3262059298, 'T': 1698680330981, 'm': False, 'M': True}
+2023-10-30 21:08:50,046 - INFO - {'e': 'aggTrade', 'E': 1698680330982, 's': 'BTCUSDT', 'a': 2742352428, 'p': '34695.01000000', 'q': '0.00303000', 'f': 3262059298, 'l': 3262059298, 'T': 1698680330981, 'm': False, 'M': True}
+2023-10-30 21:08:52,110 - INFO - {'e': 'aggTrade', 'E': 1698680332877, 's': 'BTCUSDT', 'a': 2742352637, 'p': '34681.71000000', 'q': '0.02045000', 'f': 3262059518, 'l': 3262059518, 'T': 1698680332877, 'm': False, 'M': True}
+2023-10-30 21:08:52,110 - INFO - {'e': 'aggTrade', 'E': 1698680332877, 's': 'BTCUSDT', 'a': 2742352637, 'p': '34681.71000000', 'q': '0.02045000', 'f': 3262059518, 'l': 3262059518, 'T': 1698680332877, 'm': False, 'M': True}
+2023-10-30 21:08:54,176 - INFO - {'e': 'aggTrade', 'E': 1698680334439, 's': 'BTCUSDT', 'a': 2742352643, 'p': '34681.71000000', 'q': '0.00031000', 'f': 3262059524, 'l': 3262059524, 'T': 1698680334438, 'm': False, 'M': True}
+2023-10-30 21:08:54,178 - INFO - {'e': 'aggTrade', 'E': 1698680334439, 's': 'BTCUSDT', 'a': 2742352643, 'p': '34681.71000000', 'q': '0.00031000', 'f': 3262059524, 'l': 3262059524, 'T': 1698680334438, 'm': False, 'M': True}
