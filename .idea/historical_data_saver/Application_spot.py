@@ -13,7 +13,7 @@ app = Flask(__name__)
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
-file_handler = TimedRotatingFileHandler("Application_logs/App_Main_logs.log", when="midnight", interval=1, backupCount=30)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
+file_handler = TimedRotatingFileHandler("Application_spot_logs/App_Main_spot_logs.log", when="midnight", interval=1, backupCount=None)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
 file_handler.setLevel(logging.INFO) # Set the logging level for the logger object
 file_handler.setFormatter(logging.Formatter("%(levelname)s - %(msecs)d - %(message)s"))# Set the formatter for the handler
 logger.addHandler(file_handler)# Add the handler to the logge
@@ -86,7 +86,7 @@ def startWebSocket(currency_pair):
 #This line creates a while True loop.
 #  This means that the code will keep trying to start the websocket until it is successful.
         try:
-            url = f"wss://fstream.binance.com:/ws/{currency_pair}@ticker"
+            url = f"wss://stream.binance.com:9443/ws/{currency_pair}@aggTrade"
             ws = websocket.WebSocketApp(url,#The URL of the Binance websocket server.
                                         on_open=on_open,#A callback function that is called when the websocket is opened.
                                         on_message=on_message,#A callback function that is called when the websocket receives a message.
@@ -114,8 +114,6 @@ def on_message(ws, message):
     #This means that the response variable can be accessed from within the on_message() function.
     response = message
     #Assigns the value of the message parameter to the response variable.
-    #logging.info("program is working as expected.")
-    #Logs a message to the info log indicating that the program is working as expected.
     #this adds the data to the logger as well as adds the required data to the stream
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     #ets the current time and formats it as a string
@@ -129,7 +127,7 @@ def on_error(ws, error):
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     logger.error(f"{current_time} - {error} - {response}")
     # logger.error(response)
-    time.sleep(5)  # Wait for 5 seconds before resubscribing
+    time.sleep(1)  # Wait for 1 seconds before resubscribing
     ws.close() # Close the existing WebSocket connection
     startWebSocket(currency_pair)
     #statement starts a new WebSocket connection. This is necessary because the old WebSocket connection cannot be reused.
@@ -189,7 +187,7 @@ if __name__ == "__main__":
         server_thread.start()
 
         # Load the currency pairs from the configuration file
-        with open("configuration_file.txt", "r") as f:
+        with open("configuration_spot_file.conf", "r") as f:
             currency_pairs = f.read().splitlines()
 
         # Create an empty list to store the websocket threads

@@ -13,7 +13,7 @@ app = Flask(__name__)
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
-file_handler = TimedRotatingFileHandler("Application_logs/App_Main_logs.log", when="midnight", interval=1, backupCount=30)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
+file_handler = TimedRotatingFileHandler("Application_perpetual_logs/App_Main_perpetual_logs.log", when="midnight", interval=1, backupCount=None)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
 file_handler.setLevel(logging.INFO) # Set the logging level for the logger object
 file_handler.setFormatter(logging.Formatter("%(levelname)s - %(msecs)d - %(message)s"))# Set the formatter for the handler
 logger.addHandler(file_handler)# Add the handler to the logge
@@ -86,7 +86,7 @@ def startWebSocket(currency_pair):
 #This line creates a while True loop.
 #  This means that the code will keep trying to start the websocket until it is successful.
         try:
-            url = f"wss://stream.binance.com:9443/ws/{currency_pair}@aggTrade"
+            url = f"wss://fstream.binance.com:/ws/{currency_pair}@bookTicker"
             ws = websocket.WebSocketApp(url,#The URL of the Binance websocket server.
                                         on_open=on_open,#A callback function that is called when the websocket is opened.
                                         on_message=on_message,#A callback function that is called when the websocket receives a message.
@@ -175,7 +175,7 @@ def startServer():
 
     # Try to run the app on port 5000.
     try:
-        app.run(host="0.0.0.0", port=5000)
+        app.run(host="0.0.0.0", port=4000)
 
     # If an error occurs, log it.
     except Exception as error:
@@ -189,7 +189,7 @@ if __name__ == "__main__":
         server_thread.start()
 
         # Load the currency pairs from the configuration file
-        with open("configuration_file.txt", "r") as f:
+        with open("configuration_perpetual_file.conf", "r") as f:
             currency_pairs = f.read().splitlines()
 
         # Create an empty list to store the websocket threads
