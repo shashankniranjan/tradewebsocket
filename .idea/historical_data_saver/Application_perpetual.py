@@ -215,7 +215,7 @@ def create_directories_for_each_currency(currency_pairs, folder_path):
     # Creates a directory for each currency in the list of currency pairs.
     for currency_pair in currency_pairs:
         if currency_pair:
-            directory_name = currency_pair.split("/")[0]
+            directory_name = currency_pair.split("/")[0].upper()
             full_path = os.path.join(folder_path, directory_name)
 
             # Create a new logger for each thread
