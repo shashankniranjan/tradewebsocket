@@ -16,9 +16,9 @@ app = Flask(__name__)
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
+logging.basicConfig(filename=f"Application_perpetual_logs/App_Main_perpetual_logs.log",level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
 
-file_handler = TimedRotatingFileHandler("Application_perpetual_logs/App_Main_perpetual_logs.log", when="midnight", interval=1, backupCount=None)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
+file_handler = TimedRotatingFileHandler(filename=f"Application_perpetual_logs/App_Main_perpetual_logs.log", when="midnight", interval=1, backupCount=1000000000)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
 file_handler.setLevel(logging.INFO) # Set the logging level for the logger object
 file_handler.setFormatter(logging.Formatter(f"%(levelname)s - %(msecs)d - %(message)s"))# Set the formatter for the handler
 logger.addHandler(file_handler)# Add the handler to the logger
@@ -117,7 +117,7 @@ def on_open(ws):
 
 #this is the part which takes the messsage from the application
 def on_message(ws, message):
-    global response, symbol
+    global response, symbol,last_price
 
     # Declares the response variable as a global variable.
     # This means that the response variable can be accessed from within the on_message() function.
@@ -137,26 +137,51 @@ def on_message(ws, message):
         logger.info(f"{current_time} {timezone} {timezone_offset} - {message}")
         print(current_time, " ", message)
 
-        # Create a symbol-specific log file path
-        symbol_file_path = f"currency_logs/Perpetual_currency_logs/{symbol}/{symbol}_perpetual_logs.log"
+        # Create a symbol-specific log file handler
+        symbol_logger = logging.getLogger(f"perpetual_currency_logs.{symbol}")
+        symbol_log_handler = TimedRotatingFileHandler(
+            f"currency_logs/Perpetual_currency_logs/{symbol}/{symbol}_perpetual_logs.log",
+            when="midnight",
+            interval=1,
+            backupCount=10000000000000
+        )
+        symbol_log_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)-8s %(message)s"))
+        symbol_logger.addHandler(symbol_log_handler)
 
-        # Check if the symbol-specific log file exists
-        if not os.path.exists(symbol_file_path):
-            # Create the symbol-specific log file if it doesn't exist
-            with open(symbol_file_path, "w") as f:
-                f.write("")
-
-        # Open the symbol-specific log file in append mode
-        with open(symbol_file_path, "a") as f:
-            # Write the message to the symbol-specific log file
-            f.write(f"{current_time} {message}\n")
+        # Log the message with timestamp and timezone info
+        symbol_logger.info(f"{current_time} {timezone} {timezone_offset} - {message}")
 
         # Log the message to the main log file
-        logger.info(f"{current_time} {timezone} {timezone_offset} - {message}\n")
+        logger.info(f"{current_time} {timezone} {timezone_offset} - {message}")
     except Exception as e:
         # Handle any errors that occur during processing
-        logger.error(f"Error processing message: {e}")
+            logger.error(f"Error processing message: {e}")
+        
 
+    # last_update_time = time.time()
+    # #Assigns the current time to the current_time variable. The time.time() function is used to get the current time.
+    # current_time = time.time()
+
+    # if last_price is not None and last_update_time is not None and current_time - last_update_time <= 5:
+    #     # Checks if the last_price variable is not None, the last_update_time variable is not None,
+    #     #  and the difference between the current time and the last update time is less than or equal to 5 seconds.
+    #     response_data = {
+    #         "last_price": last_price,
+    #         "symbol": symbol,
+    #     }
+    #     logger.info(f"last_price -symbol- {last_price} - {symbol}")
+    #     response = make_response(jsonify(response_data), 200)
+    #     # Creates a response object with the response_data dictionary and a status code of 200.
+    #         # 200 means success
+    #     return response
+    #     # Returns the response object.
+
+    # else:
+    #     response_data = {"message": "No recent data available"}
+    #     logger.error(f"last_price -symbol- {last_price} - {symbol}")
+    #     logger.error("message - No recent data available")
+    #     response = make_response(jsonify(response_data), 404)
+    #     return response
 
 #this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
