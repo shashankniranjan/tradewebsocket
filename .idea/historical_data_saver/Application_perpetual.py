@@ -93,7 +93,7 @@ def startWebSocket(currency_pair):
 #This line creates a while True loop.
 #  This means that the code will keep trying to start the websocket until it is successful.
         try:
-            url = f"wss://fstream.binance.com:/ws/{currency_pair}@ticker"
+            url = f"wss://fstream.binance.com:/ws/{currency_pair}@aggTrade"
             ws = websocket.WebSocketApp(url,#The URL of the Binance websocket server.
                                         on_open=on_open,#A callback function that is called when the websocket is opened.
                                         on_message=on_message,#A callback function that is called when the websocket receives a message.
@@ -104,9 +104,25 @@ def startWebSocket(currency_pair):
             break
         #This line breaks out of the while True loop if the websocket is successfully started.
         except Exception as e:
-            logging.error(f"Error starting websocket for {currency_pair}: {e}")
+            logger.error(f"Error starting websocket for {currency_pair}: {e}")
             #This line catches any exceptions that occur while starting the websocket and logs an error message.
             time.sleep(1)
+            # Handle specific error types and implement appropriate solutions
+            if isinstance(e, websocket.WebSocketException):
+                # Handle websocket protocol errors
+                logger.error(f"WebSocket protocol error: {e}")
+                # Implement retry mechanism with exponential backoff
+                time.sleep(0.1)
+            elif isinstance(e, ConnectionResetError):
+                # Handle network connection loss
+                logger.error(f"Network connection lost: {e}")
+                # Attempt reconnection after a delay
+                time.sleep(0.1)
+            else:
+                # Handle other generic exceptions
+                logger.error(f"Unknown error: {e}")
+                # Implement retry mechanism with exponential backoff
+                time.sleep(0.1)
 
 def on_open(ws):
     #Prints a message to the console indicating that the websocket has been opened.
@@ -123,7 +139,7 @@ def on_message(ws, message):
         json_data = json.loads(message)
         symbol = json_data["s"]
 
-        current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S-%z')
+        current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%z')
         logger.info(f"{current_time} - {message}")
         print(current_time, " ", message)
 
@@ -175,7 +191,7 @@ def on_message(ws, message):
 def on_error(ws, error):
     #Logs a message to the error log indicating that the program encountered an error.
     logger.error("The program encountered an error")
-    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S- %z')
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%z')
     logger.error(f"{current_time} - {error} - {response}")
     # logger.error(response)
     time.sleep(1)  # Wait for 1 seconds before resubscribing
@@ -186,7 +202,7 @@ def on_error(ws, error):
 
 def on_close(ws, close_status_code, close_msg):
     """Logs a critical message indicating that the connection was lost and restarts the websocket connection if the connection was closed due to an error."""
-    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S- %z')
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%z')
     logger.critical(f"{current_time} - Critical error: {close_msg}")
 
     if close_status_code != 1000:
@@ -239,11 +255,12 @@ def startServer():
 
     # Try to run the app on port 5000.
     try:
-        app.run(host="0.0.0.0", port=5000)
+        app.run(host="0.0.0.0", port=5000, debug=True)
 
     # If an error occurs, log it.
     except Exception as error:
         logger.error(f"{error}")
+
 
 if __name__ == "__main__":
     try:
@@ -253,7 +270,7 @@ if __name__ == "__main__":
         server_thread.start()
 
         # Load the currency pairs from the configuration file
-        with open("configuration_files/configuration_perpetual_file.conf", "r") as f:
+        with open("configuration_perpetual_file.conf","r") as f:
             currency_pairs = f.read().splitlines()
 
         # Create an empty list to store the websocket threads
@@ -261,9 +278,13 @@ if __name__ == "__main__":
 
         # Iterate over the list of currency pairs and start a new websocket thread for each currency pair
         for currency_pair in currency_pairs:
-            thread = start_websocket_thread(currency_pair)
+            try:
+                thread = start_websocket_thread(currency_pair)
+            except Exception as e:
+                logger.error(f"Error creating websocket thread for currency pair: {currency_pair}")
+                logger.error(e)
+                continue
 
-            # If the websocket thread was successfully created and started, add it to the list
             if thread is not None:
                 threads.append(thread)
 
@@ -271,12 +292,12 @@ if __name__ == "__main__":
         folder_path = f"currency_logs/Perpetual_currency_logs"
         create_directories_for_each_currency(currency_pairs, folder_path)
 
+        # Parse the log file
+
     finally:
         for thread in threads:
             # Wait for all of the websocket threads to finish running
-            thread.join()
+                thread.join()
 
         # If the program closed unexpectedly, log an error message
         logger.error("the program closed unexpectedly")
-
-
