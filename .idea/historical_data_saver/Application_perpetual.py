@@ -14,13 +14,16 @@ import os
 app = Flask(__name__)
 # Create a logger object for the current module
 logger = logging.getLogger(__name__)
-
-logging.basicConfig(filename=f"Application_perpetual_logs/App_Main_perpetual_logs.log",level=logging.INFO, format='%(levelname)s - %(msecs)d - %(message)s')
-
-file_handler = TimedRotatingFileHandler(filename=f"Application_perpetual_logs/App_Main_perpetual_logs.log", when="midnight", interval=1, backupCount=1000000000)# Import the TimedRotatingFileHandler class from the logging module# Create a TimedRotatingFileHandler object
-file_handler.setLevel(logging.INFO) # Set the logging level for the logger object
-file_handler.setFormatter(logging.Formatter(f"%(levelname)s - %(msecs)d - %(message)s"))# Set the formatter for the handler
-logger.addHandler(file_handler)# Add the handler to the logger
+# Set the logging level for the logger
+logging.basicConfig(filename="Application_perpetual_logs/App_Main_perpetual_logs.log", level=logging.INFO, format="%(levelname)s - %(msecs)d - %(message)s")
+# Create a TimedRotatingFileHandler object
+file_handler = TimedRotatingFileHandler(filename="Application_perpetual_logs/App_Main_perpetual_logs.log", when="midnight", interval=1, backupCount=1000000000)
+# Set the logging level for the handler
+file_handler.setLevel(logging.INFO)
+# Set the formatter for the handler
+file_handler.setFormatter(logging.Formatter("%(levelname)s - %(msecs)d - %(message)s"))
+# Add the handler to the logger
+logger.addHandler(file_handler)
 
 # Initialize variables
 last_price = None
@@ -93,7 +96,7 @@ def startWebSocket(currency_pair):
 #This line creates a while True loop.
 #  This means that the code will keep trying to start the websocket until it is successful.
         try:
-            url = f"wss://fstream.binance.com:/ws/{currency_pair}@aggTrade"
+            url = f"wss://fstream.binance.com:/ws/{currency_pair}@ticker"
             ws = websocket.WebSocketApp(url,#The URL of the Binance websocket server.
                                         on_open=on_open,#A callback function that is called when the websocket is opened.
                                         on_message=on_message,#A callback function that is called when the websocket receives a message.
@@ -112,7 +115,11 @@ def startWebSocket(currency_pair):
                 # Handle websocket protocol errors
                 logger.error(f"WebSocket protocol error: {e}")
                 # Implement retry mechanism with exponential backoff
-                time.sleep(0.1)
+                # Implement exponential backoff with a maximum delay of 10 seconds
+                backoff = 0.1
+                while backoff < 10:
+                    time.sleep(backoff)
+                    backoff *= 2
             elif isinstance(e, ConnectionResetError):
                 # Handle network connection loss
                 logger.error(f"Network connection lost: {e}")
@@ -150,7 +157,7 @@ def on_message(ws, message):
             interval=1,
             backupCount=10000000000000
         )
-        symbol_log_handler.setFormatter(logging.Formatter(f"%(msecs)d - %(message)s"))
+        symbol_log_handler.setFormatter(logging.Formatter("%(msecs)d - %(message)s"))
         symbol_logger.addHandler(symbol_log_handler)
 
         symbol_logger.info(f"{current_time} - {message}")
@@ -193,12 +200,23 @@ def on_error(ws, error):
     logger.error("The program encountered an error")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%z')
     logger.error(f"{current_time} - {error} - {response}")
-    # logger.error(response)
-    time.sleep(1)  # Wait for 1 seconds before resubscribing
-    ws.close() # Close the exutcing WebSocket connection
-    startWebSocket(currency_pair)
-    #statement starts a new WebSocket connection. This is necessary because the old WebSocket connection cannot be reused.
-    # Reconnect and resubscribe
+    # Attempt to reconnect after a delay
+    # Handle specific error types and implement appropriate solutions
+    if isinstance(error, websocket.WebSocketException):
+        logger.error("WebSocket protocol error: %s",f"{current_time} - {error} - {response}")
+        # Implement retry mechanism with exponential backoff
+        time.sleep(1)
+        startWebSocket(currency_pair)
+    elif isinstance(error, ConnectionResetError):
+        logger.error("Network connection lost: %s",f"{current_time} - {error} - {response}")
+        # Attempt reconnection after a delay
+        time.sleep(1)
+        startWebSocket(currency_pair)
+    else:
+        logger.error("Unknown error: %s",f"{current_time} - {error} - {response}")
+        # Implement retry mechanism with exponential backoff
+        time.sleep(1)
+        startWebSocket(currency_pair)
 
 def on_close(ws, close_status_code, close_msg):
     """Logs a critical message indicating that the connection was lost and restarts the websocket connection if the connection was closed due to an error."""
@@ -270,7 +288,7 @@ if __name__ == "__main__":
         server_thread.start()
 
         # Load the currency pairs from the configuration file
-        with open("configuration_perpetual_file.conf","r") as f:
+        with open("configuration_files/configuration_perpetual_file.conf", "r") as f:
             currency_pairs = f.read().splitlines()
 
         # Create an empty list to store the websocket threads
@@ -278,26 +296,21 @@ if __name__ == "__main__":
 
         # Iterate over the list of currency pairs and start a new websocket thread for each currency pair
         for currency_pair in currency_pairs:
-            try:
-                thread = start_websocket_thread(currency_pair)
-            except Exception as e:
-                logger.error(f"Error creating websocket thread for currency pair: {currency_pair}")
-                logger.error(e)
-                continue
+            thread = start_websocket_thread(currency_pair)
 
+            # If the websocket thread was successfully created and started, add it to the list
             if thread is not None:
                 threads.append(thread)
 
         # Create a directory for each currency in the list of currency pairs.
         folder_path = f"currency_logs/Perpetual_currency_logs"
         create_directories_for_each_currency(currency_pairs, folder_path)
-
         # Parse the log file
 
     finally:
         for thread in threads:
             # Wait for all of the websocket threads to finish running
-                thread.join()
+            thread.join()
 
         # If the program closed unexpectedly, log an error message
         logger.error("the program closed unexpectedly")
