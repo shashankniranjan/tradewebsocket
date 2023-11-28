@@ -150,7 +150,7 @@ def on_message(ws, message):
         logger.info(f"{current_time} - {message}")
         print(current_time, " ", message)
 
-        symbol_logger = logging.getLogger(f"Spot_currency_logs.{symbol}")
+        symbol_logger = logging.getLogger(f"Perpetual_currency_logs.{symbol}")
         symbol_log_handler = TimedRotatingFileHandler(
             f"currency_logs/Perpetual_currency_logs/{symbol}/{symbol}_perpetual_logs.log",
             when="midnight",
@@ -194,29 +194,38 @@ def on_message(ws, message):
             last_message_time = time.time()
 
 
-#this takes the part of the error to the logs and from the data stream
 def on_error(ws, error):
-    #Logs a message to the error log indicating that the program encountered an error.
+    # Logs a message to the error log indicating that the program encountered an error.
     logger.error("The program encountered an error")
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S_%z')
     logger.error(f"{current_time} - {error} - {response}")
-    # Attempt to reconnect after a delay
+
     # Handle specific error types and implement appropriate solutions
     if isinstance(error, websocket.WebSocketException):
-        logger.error("WebSocket protocol error: %s",f"{current_time} - {error} - {response}")
+        logger.error("WebSocket protocol error: %s", f"{current_time} - {error} - {response}")
         # Implement retry mechanism with exponential backoff
-        time.sleep(1)
-        startWebSocket(currency_pair)
+        backoff = 1
+        while backoff <= 10:
+            time.sleep(backoff)
+            try:
+                startWebSocket(currency_pair)
+                return
+            except websocket.WebSocketException:
+                logger.error("Failed retry attempt")
+                backoff *= 2
+
+        # If retries fail, log a critical error and close the connection
+        logger.critical("Failed to reconnect after multiple attempts")
+        ws.close()
     elif isinstance(error, ConnectionResetError):
-        logger.error("Network connection lost: %s",f"{current_time} - {error} - {response}")
+        logger.error("Network connection lost: %s", f"{current_time} - {error} - {response}")
         # Attempt reconnection after a delay
         time.sleep(1)
         startWebSocket(currency_pair)
     else:
-        logger.error("Unknown error: %s",f"{current_time} - {error} - {response}")
-        # Implement retry mechanism with exponential backoff
-        time.sleep(1)
-        startWebSocket(currency_pair)
+        logger.error("Unknown error: %s", f"{current_time} - {error} - {response}")
+        # Implement appropriate error handling logic
+
 
 def on_close(ws, close_status_code, close_msg):
     """Logs a critical message indicating that the connection was lost and restarts the websocket connection if the connection was closed due to an error."""
@@ -288,11 +297,11 @@ if __name__ == "__main__":
         server_thread.start()
 
         # Load the currency pairs from the configuration file
-        with open("configuration_files/configuration_perpetual_file.conf", "r") as f:
+        with open("configuration_perpetual_file.conf", "r") as f:
             currency_pairs = f.read().splitlines()
 
         # Create an empty list to store the websocket threads
-        threads = []
+        threads = []  # Declare the variable 'threads' here
 
         # Iterate over the list of currency pairs and start a new websocket thread for each currency pair
         for currency_pair in currency_pairs:
@@ -305,10 +314,11 @@ if __name__ == "__main__":
         # Create a directory for each currency in the list of currency pairs.
         folder_path = f"currency_logs/Perpetual_currency_logs"
         create_directories_for_each_currency(currency_pairs, folder_path)
+
         # Parse the log file
 
     finally:
-        for thread in threads:
+        for thread in threads:  # Use the defined variable 'threads' here
             # Wait for all of the websocket threads to finish running
             thread.join()
 
