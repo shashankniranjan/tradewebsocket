@@ -3,19 +3,11 @@ import rel
 import logging
 import os
 from datetime import datetime
+import time
 from logging.handlers import TimedRotatingFileHandler
+import json
 
 def create_logger(currency_pair, currency_type):
-    """
-    This function creates separate loggers for each currency pair and type.
-
-    Args:
-        currency_pair: The identifier for the currency pair (e.g., EURUSD).
-        currency_type: The type of currency (e.g., forex, crypto).
-
-    Returns:
-        A logging object specific to the provided currency pair and type.
-    """
 
     # Create folders for both application and historical data logs with appropriate naming.
     # The `exist_ok=True` argument prevents errors if the folders already exist.
@@ -34,7 +26,7 @@ def create_logger(currency_pair, currency_type):
     # Create a TimedRotatingFileHandler for application logs.
     # This handler rotates logs at midnight daily, keeping up to 5 backups.
     app_log_file = f"{app_log_folder}/{current_date}_{currency_pair}_{currency_type}.log"
-    app_log_file_handler = TimedRotatingFileHandler(filename=app_log_file, when="midnight", interval=1, backupCount=None)
+    app_log_file_handler = TimedRotatingFileHandler(filename=app_log_file, when="midnight", interval=1, backupCount=-1)
     app_log_file_handler.setLevel(logging.INFO)  # Set the handler's level to INFO.
 
     # Create a TimedRotatingFileHandler for historical data logs.
@@ -54,32 +46,92 @@ def create_logger(currency_pair, currency_type):
 
     # Finally, return the configured logger object.
     return logger
+# Initialize variables
 
-
+last_update_time = None
+currency_pair = None
+url = None
+currency_type = None
+last_message=None
+last_message_time=None
 
 def on_message(ws, message):
-    currency_logger.critical(message)  # Log message using currency-specific logger .
+    try:
+        # Parse JSON data
+        json_data = json.loads(message)
+        symbol = json_data["s"]
+        currency_logger.info(f"{message}")
+        # Check for repeated messages
+        global last_message, last_message_time
+        if message == last_message and time.time() - last_message_time <= 5:
+            # Same message received within 5 seconds, handle accordingly
+            currency_logger.error("Same message received for 5 seconds")
+            #behavior for repeated messages
+            on_error()
+            return
 
-def on_error(ws, error):
-    currency_logger.error(error)  # Log error using currency-specific logger
+        # Update last message and timestamp
+        last_message = message
+        last_message_time = time.time()
 
-def on_close(ws, close_status_code, close_msg):
-    currency_logger.info("### closed ###")  # Log close message using currency-specific logger
+        # Continue with original message processing logic...
+
+    except Exception as e:
+        currency_logger.error(f"Error processing message: {e}")
+        on_error()
+
+def on_error(error):
+    try:
+        currency_logger.error(f"Error connecting to the service: {error}")
+        handle_currency(currency_pair, url, currency_type)
+    except Exception as e:
+        currency_logger.error(f"Error logging error: {e}")
+        handle_currency(currency_pair, url, currency_type)
+
+def on_close(close_status_code, close_msg):
+    try:
+        currency_logger.info(f"Connection closed: Status code {close_status_code}, Message: {close_msg}")
+        handle_currency(currency_pair, url, currency_type)
+    except Exception as e:
+        currency_logger.error(f"Error logging close message: {e}")
+        handle_currency(currency_pair, url, currency_type)
 
 def on_open(ws):
-    currency_logger.info("Opened connection")  # Log connection open using currency-specific logger
+    try:
+        currency_logger.info("Opened connection")
+    except Exception as e:
+        currency_logger.error(f"Error logging open message: {e}")
 
-def handle_currency(currency_pair , url , currency_type):
+
+def handle_currency(currency_pair, url, currency_type):
     global currency_logger
-    currency_logger = create_logger(currency_pair, currency_type)
+    try:
+        # Try to create a logger and establish the connection.
+        # If anything goes wrong, log the error and stop.
+        currency_logger = create_logger(currency_pair, currency_type)
+        ws = websocket.WebSocketApp(f"{url}/{currency_pair}@aggTrade",
+                                        on_open=on_open,#A callback function that is called when the websocket is opened.
+                                        on_message=on_message,#A callback function that is called when the websocket receives a message.
+                                        on_error=on_error,#A callback function that is called when the websocket encounters an error.
+                                        on_close=on_close)#A callback function that is called when the websocket is closed.
+        try:
+            # Attempt to run the connection with automatic reconnection.
+            # If there are specific connection errors, log them and stop.
+            ws.run_forever(dispatcher=rel, reconnect=5)
+        except (ConnectionRefusedError, TimeoutError) as e:
+            currency_logger.error(f"Connection failed for {currency_pair}: {e}")
+        except KeyboardInterrupt:
+            # Handle keyboard interrupt gracefully and log information.
+            currency_logger.info(f"Connection interrupted for {currency_pair}")
 
-    ws = websocket.WebSocketApp(f"{url}/{currency_pair}@aggTrade",
-                                on_open=on_open,
-                                on_message=on_message,
-                                on_error=on_error,
-                                on_close=on_close)
+    except (TypeError, ValueError) as e:
+        # Catch any issues during logging or message processing.
+        currency_logger.error(f"Error handling {currency_pair}: {e}")
 
-
-    ws.run_forever(dispatcher=rel, reconnect=5)  # Set dispatcher to automatic reconnection, 5 second reconnect delay if connection closed unexpectedly
-    rel.signal(2, rel.abort)  # Keyboard Interrupt
-    rel.dispatch()
+    finally:
+        # Always attempt to clean up resources. If there are errors, log them.
+        try:
+            rel.signal(2, rel.abort)
+            rel.dispatch()
+        except:
+            currency_logger.error(f"Error during cleanup for {currency_pair}")
